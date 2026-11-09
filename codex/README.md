@@ -6,7 +6,7 @@ Examine an original PDF, Office file or image for construction, typography, layo
 
 ## What it does
 
-Connects Codex to your own Ultiwrite Forensics account at https://ultiwrite.co through the remote MCP server `https://mcp.ultiwrite.co/mcp`. You can submit one authorized original per examination (PDF, Office, RTF, images or one ZIP of those, up to 3 MiB), follow its status, read source-bound findings and document metadata, and download the forensic PDF report.
+Connects Codex to your own Ultiwrite Forensics account at https://ultiwrite.co through the remote MCP server `https://mcp.ultiwrite.co/mcp`. You can submit one authorized original per examination (PDF, Office, RTF, images or one ZIP of those, up to 48 MiB via browser upload or app attachment retrieval; inline tool payloads stay limited to 3 MiB), follow its status, read source-bound findings and document metadata, and download the forensic PDF report.
 
 ## Install
 

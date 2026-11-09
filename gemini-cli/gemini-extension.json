@@ -1,6 +1,6 @@
 {
   "name": "ultiwrite-forensics",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {

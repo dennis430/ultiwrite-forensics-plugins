@@ -1,69 +1,69 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "generatedFrom": "distribution/ + lib/mcp/tools.ts",
   "packages": {
     "openai": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-openai-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "82090bd88e2049fdc9ab48f4c878b87fcadc04d555534577cf13b67459563c09",
-      "bytes": 37524,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-openai-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "9d6685a36c6c697081167a791b8b90e1c7284e95e81670b4f7b3f5fbbbdc4183",
+      "bytes": 37722,
       "status": "prepared_not_submitted"
     },
     "codex": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-codex-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "80df45e8e02a4482a59db23bc66867806db57ad25201e4c9a832a67afca05401",
-      "bytes": 36259,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-codex-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "39c6b756537cfabaefab6bca50cac3d0cf9cbe9ae818797257eb15ed196cdfdc",
+      "bytes": 36433,
       "status": "prepared_not_submitted"
     },
     "claude": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-claude-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "7381da8312febd59876dbe694c7a2179188df99c0b295f743a0d789c29fa9479",
-      "bytes": 32712,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-claude-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "bf8b73831658b04b3a1e89576c6e0c1508a4648fc7b0584e89a572b3f667b110",
+      "bytes": 32934,
       "status": "prepared_not_submitted"
     },
     "cursor": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-cursor-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "2ad3f2f8715e71924155b7ebb9ca8d276bccfaf7d244a9b75b3e7b1399537520",
-      "bytes": 30435,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-cursor-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "e86a92b687ba80d0bd1b72a76f8dd1f89c9e672d5d856b771783aced8b07970e",
+      "bytes": 30608,
       "status": "prepared_not_submitted"
     },
     "mcp-registry": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-mcp-registry-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "7f47ab26360e22c04131b1c029325c88c0df9cee13ab884d10e5cfea4678d4f3",
-      "bytes": 3468,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-mcp-registry-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "66fffd3c62764268d2c685370858d97201e32f13f6678865b7e5ee4b6070413d",
+      "bytes": 3449,
       "status": "prepared_not_submitted"
     },
     "antigravity": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-antigravity-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "13e17d883801975e1eafc9aaa9dbf22518eab34a2cdc30f302455bad4473a377",
-      "bytes": 30423,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-antigravity-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "e95ee89072319e92b7b06a5c684a9af6dbd30c3707371a1309d6f241baf7a36b",
+      "bytes": 30597,
       "status": "prepared_not_submitted"
     },
     "gemini-cli": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-gemini-cli-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "01a57d814ddc0a632c5f44b1f0c57c2a8d6c0102af518712749962477b4ecb86",
-      "bytes": 7128,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-gemini-cli-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "a58e98a81e131e3cb040d6abad6484771bccaa60c4a7bea4aaa436661b4ed087",
+      "bytes": 7286,
       "status": "prepared_not_submitted"
     },
     "microsoft-365": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-microsoft-365-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "edec098b888f250f2ecd0e073fbe0bbb359369f439f064df4d43ca80e2a3a3da",
-      "bytes": 9155,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-microsoft-365-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "ff285bf51da3247010f0c5237ffee473f372bfda2c5ac8a6121360edad1d6825",
+      "bytes": 9136,
       "status": "prepared_not_submitted"
     },
     "plugin-bundle": {
-      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-plugin-bundle-1.0.2.zip",
-      "version": "1.0.2",
-      "sha256": "fbfb80b99946dbbab34ab104bdaa2e160c4a53ab743d7f58b1b1f3c0f4472771",
-      "bytes": 195753,
+      "file": "/downloads/ultiwrite-forensics/ultiwrite-forensics-plugin-bundle-1.0.4.zip",
+      "version": "1.0.4",
+      "sha256": "3c91a425a70ff21c5fcded61bea7b59963fc8e9b2b746ff70844bb22036c1fbb",
+      "bytes": 196806,
       "status": "prepared_not_submitted"
     }
   }
