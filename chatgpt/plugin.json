@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ultiwrite-forensics",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -38,7 +38,7 @@
               "description": "Capabilities and retention",
               "prompt": "What file types can Ultiwrite Forensics examine and how long are reports kept?",
               "tools_triggered": "ultiwrite_forensics_capabilities_get",
-              "expected_behavior": "Lists accepted formats and the 3 MiB / 40-page limits, whether examinations are available, and the temporary-processing retention windows (source deleted within one hour, report available up to 24 hours)."
+              "expected_behavior": "Lists accepted formats, the 48 MiB attachment/browser limit, the 3 MiB inline limit and the 40-page PDF limit, whether examinations are available, and the temporary-processing retention windows (source deleted within one hour, report available up to 24 hours)."
             },
             {
               "description": "Examine an attached PDF",
@@ -76,7 +76,7 @@
         }
       },
       "publication": {
-        "release_notes": "Ultiwrite Forensics connector packages 1.0.2."
+        "release_notes": "Ultiwrite Forensics connector packages 1.0.4."
       }
     }
   }
