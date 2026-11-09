@@ -1,0 +1,83 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ultiwrite-forensics",
+  "version": "1.0.2",
+  "description": "Document forensics. Metadata analysis. No permanent document retention.",
+  "author": {
+    "name": "DWS Offshore Fund",
+    "url": "https://ultiwrite.co"
+  },
+  "homepage": "https://ultiwrite.co",
+  "license": "Proprietary",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Ultiwrite Forensics",
+        "shortDescription": "Document forensics & metadata",
+        "longDescription": "Examine an original PDF, Office file or image for construction, typography, layout, metadata and retained editing evidence. Each examination returns source-bound findings, document metadata and a forensic PDF report. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Findings are evidence to assess, not an authenticity certificate.",
+        "developerName": "DWS Offshore Fund",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ultiwrite.co",
+        "supportURL": "https://ultiwrite.co/support",
+        "privacyPolicyURL": "https://ultiwrite.co/privacy",
+        "termsOfServiceURL": "https://ultiwrite.co/terms",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/composer-icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Connected account and usage",
+              "prompt": "Which Ultiwrite Forensics account am I connected to and how many analyses do I have left?",
+              "tools_triggered": "ultiwrite_forensics_account_get",
+              "expected_behavior": "Returns the connected account (email for email sign-in), available and reserved units and granted permissions. No analysis is started."
+            },
+            {
+              "description": "Capabilities and retention",
+              "prompt": "What file types can Ultiwrite Forensics examine and how long are reports kept?",
+              "tools_triggered": "ultiwrite_forensics_capabilities_get",
+              "expected_behavior": "Lists accepted formats and the 3 MiB / 40-page limits, whether examinations are available, and the temporary-processing retention windows (source deleted within one hour, report available up to 24 hours)."
+            },
+            {
+              "description": "Examine an attached PDF",
+              "prompt": "Check this bank statement PDF for signs of editing.",
+              "tools_triggered": "ultiwrite_forensics_analysis_start, ultiwrite_forensics_analysis_status",
+              "expected_behavior": "Submits the attached file as one examination, returns an analysisId with state processing, then polls status until it is completed or partial. Repeating the request with the same file returns the same analysisId without a second charge."
+            },
+            {
+              "description": "Read findings and metadata",
+              "prompt": "What did the examination find, and what does the document metadata show?",
+              "tools_triggered": "ultiwrite_forensics_findings_get",
+              "expected_behavior": "Returns findings with ids, severities, explanations and evidence references; document metadata; completed versus unassessed checks; examiner status and limitations. States that findings are not an authenticity verdict."
+            },
+            {
+              "description": "Download the report",
+              "prompt": "Give me the forensic PDF report for that examination.",
+              "tools_triggered": "ultiwrite_forensics_report_get",
+              "expected_behavior": "Returns the actual PDF as an embedded application/pdf resource with its SHA-256 and a signed-in web link; notes the report is deleted 24 hours after creation."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General business investigation is out of scope",
+              "prompt": "Investigate the owners of Synthetic Holdings LLC and their other companies."
+            },
+            {
+              "description": "Arbitrary registry searches and authenticity certification are not offered",
+              "prompt": "Look up this EIN directly in the IRS database and confirm it is valid."
+            },
+            {
+              "description": "No authenticity certification",
+              "prompt": "Certify that this contract is authentic so I can show the bank."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Ultiwrite Forensics connector packages 1.0.2."
+      }
+    }
+  }
+}

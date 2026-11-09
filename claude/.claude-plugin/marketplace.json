@@ -1,0 +1,16 @@
+{
+  "name": "ultiwrite-forensics",
+  "description": "Ultiwrite Forensics plugin for Claude",
+  "owner": {
+    "name": "DWS Offshore Fund",
+    "url": "https://ultiwrite.co"
+  },
+  "plugins": [
+    {
+      "name": "ultiwrite-forensics",
+      "source": "./plugins/ultiwrite-forensics",
+      "description": "Document forensics. Metadata analysis. No permanent document retention.",
+      "version": "1.0.2"
+    }
+  ]
+}

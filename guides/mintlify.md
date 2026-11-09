@@ -1,0 +1,5 @@
+# Mintlify documentation integration
+
+This is a documentation-host integration guide, not a plugin registration or upload format. In the standalone Mintlify project, set the site name to **Ultiwrite Forensics**. Reference https://ultiwrite.co/openapi.json for the API and https://mcp.ultiwrite.co/mcp for the remote OAuth MCP server. Link to https://ultiwrite.co/docs/mcp, https://ultiwrite.co/privacy and https://ultiwrite.co/terms. Keep flagship documentation and registrations unchanged. No Mintlify project ownership or publication has been verified.
+
+No permanent document retention: Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.

@@ -1,0 +1,161 @@
+{
+  "product": "ultiwrite-forensics",
+  "version": "1.0.2",
+  "manifestSha256": "5deb0160c0b0a71d2799b09caee5a36350ae0f3000a5bac13602bff8398ff8df",
+  "validatedAt": "2026-11-09T02:14:39.592Z",
+  "results": {
+    "openai": {
+      "checks": {
+        "schema:plugin.json": "pass",
+        "schema:mcp.json (generic part; OpenAI extension checked separately)": "pass",
+        "OpenAI auth extension (documented shape: type oauth, client.mode dcr|cimd)": "pass",
+        "listing field limits": "pass",
+        "listing URLs https": "pass",
+        "5 positive / 3 negative review cases": "pass",
+        "review cases name registered tools": "pass",
+        "one MCP server, OAuth, no secret or headers": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "codex": {
+      "checks": {
+        "required interface fields": "pass",
+        ".mcp.json remote url": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "claude": {
+      "checks": {
+        "claude plugin validate plugin": "pass",
+        "claude plugin validate marketplace": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "cursor": {
+      "checks": {
+        "name kebab-case": "pass",
+        "relative logo exists": "pass",
+        "mcp.json url": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "mcp-registry": {
+      "checks": {
+        "schema:server.json": "pass",
+        "reverse-DNS namespace of ultiwrite.co": "pass",
+        "description <= 100": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "antigravity": {
+      "checks": {
+        "schema:plugin.json": "pass",
+        "suggestedPrompts <= 3": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "gemini-cli": {
+      "checks": {
+        "httpUrl (streamable HTTP) with OAuth": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "microsoft-365": {
+      "checks": {
+        "schema:manifest.json": "pass",
+        "color icon 192x192": "pass",
+        "outline icon 32x32": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "plugin-bundle": {
+      "checks": {
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "embedded openai matches validated host ZIP": "pass",
+        "embedded codex matches validated host ZIP": "pass",
+        "embedded claude matches validated host ZIP": "pass",
+        "embedded cursor matches validated host ZIP": "pass",
+        "embedded mcp-registry matches validated host ZIP": "pass",
+        "embedded antigravity matches validated host ZIP": "pass",
+        "embedded gemini-cli matches validated host ZIP": "pass",
+        "embedded microsoft-365 matches validated host ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    }
+  },
+  "externalDependencies": {
+    "microsoft-365": [
+      "Register the DCR configuration in the Teams Developer Portal and replace its referenceId before submission."
+    ]
+  },
+  "submissionReady": false
+}

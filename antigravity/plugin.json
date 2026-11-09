@@ -1,0 +1,27 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "ultiwrite-forensics",
+  "displayName": "Ultiwrite Forensics",
+  "description": "Document forensics. Metadata analysis. No permanent document retention.",
+  "version": "1.0.2",
+  "logo": "assets/logo.png",
+  "author": {
+    "name": "DWS Offshore Fund",
+    "url": "https://ultiwrite.co"
+  },
+  "homepage": "https://ultiwrite.co",
+  "license": "Proprietary",
+  "keywords": [
+    "document forensics",
+    "pdf forensics",
+    "metadata",
+    "tamper detection",
+    "document fraud",
+    "temporary processing"
+  ],
+  "suggestedPrompts": [
+    "Examine this PDF for signs of editing",
+    "What metadata does this document carry?",
+    "Download the forensic report"
+  ]
+}

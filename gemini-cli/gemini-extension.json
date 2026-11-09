@@ -1,0 +1,19 @@
+{
+  "name": "ultiwrite-forensics",
+  "version": "1.0.2",
+  "description": "Document forensics. Metadata analysis. No permanent document retention.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "ultiwrite-forensics": {
+      "httpUrl": "https://mcp.ultiwrite.co/mcp",
+      "oauth": {
+        "enabled": true,
+        "scopes": [
+          "forensics:read",
+          "forensics:analyze",
+          "forensics:delete"
+        ]
+      }
+    }
+  }
+}

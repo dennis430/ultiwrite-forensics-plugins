@@ -1,0 +1,1 @@
+Read [AGENTS.md](AGENTS.md) and [REPOSITORIES.md](REPOSITORIES.md) before changes. This is the public Ultiwrite Forensics / ultiwrite.co plugin repository. Standalone runtime changes belong in the separate private app; the main engine and flagship plugins remain outside this scope.

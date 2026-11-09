@@ -1,0 +1,21 @@
+{
+  "name": "ultiwrite-forensics",
+  "displayName": "Ultiwrite Forensics",
+  "version": "1.0.2",
+  "description": "Document forensics. Metadata analysis. No permanent document retention.",
+  "author": {
+    "name": "DWS Offshore Fund",
+    "url": "https://ultiwrite.co"
+  },
+  "homepage": "https://ultiwrite.co",
+  "license": "Proprietary",
+  "keywords": [
+    "document forensics",
+    "pdf forensics",
+    "metadata",
+    "tamper detection",
+    "document fraud",
+    "temporary processing"
+  ],
+  "privacyPolicyUrl": "https://ultiwrite.co/privacy"
+}

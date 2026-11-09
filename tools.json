@@ -1,0 +1,326 @@
+[
+  {
+    "name": "ultiwrite_forensics_account_get",
+    "title": "Connected Ultiwrite Forensics account",
+    "description": "Use to confirm which Ultiwrite Forensics account is connected and how many analysis units remain. Returns the account id, sign-in method, available and reserved units, connection permissions and limits. Read-only; it does not sign in, switch accounts or purchase usage.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_capabilities_get",
+    "title": "What Ultiwrite Forensics examines",
+    "description": "Use when the user asks what Ultiwrite Forensics can examine, which file types fit, how to submit or how long results stay available. Returns accepted formats and limits, whether new examinations are currently available, the checks the engine applies, the workflow and the zero-data retention windows. Read-only.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_upload_link_create",
+    "title": "Create a secure browser upload link",
+    "description": "Use when the user wants to examine a document but your client cannot send the file's contents. Returns a signed ultiwrite.co upload link, valid for 60 minutes, that works only for the connected account. Give the user the exact uploadUrl, keep the returned handoffId, and after the user uploads call ultiwrite_forensics_analysis_status with that handoffId. externalChecks is off by default; set it only with explicit user opt-in to selected business-field registry comparisons. The signed link fixes this choice. Creating the link does not use an analysis unit; the browser upload uses one.",
+    "scope": "forensics:analyze",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "externalChecks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Only when the user opts in: compare selected document business fields with GLEIF and IRS TEOS. Sends selected business fields, never the original document, to public registries. Separate evidence, not authenticity verification."
+        }
+      },
+      "required": []
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_analysis_start",
+    "title": "Start a document examination",
+    "description": "Use when the user asks to examine an authorized document for alteration, tampering, editing history or metadata. Submits exactly one original (PDF, Office, RTF, image or one ZIP of those, up to 3 MiB) and uses one analysis unit when a usable report is produced; failed examinations release the unit. Send file {name, contentBase64} with the original bytes when you can read the file, or files with one file object supplied by your connected app. Never pass a local path or invent a URL. Repeating the same original on this connection returns the existing examination instead of charging again; pass a new requestKey only when the user asks for a fresh examination. externalChecks is off by default; set it only with explicit user opt-in to selected business-field comparisons via GLEIF and IRS TEOS. If you cannot send bytes, use ultiwrite_forensics_upload_link_create.",
+    "scope": "forensics:analyze",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "contentBase64": {
+              "type": "string",
+              "description": "The original file's exact bytes, base64-encoded."
+            }
+          },
+          "required": [
+            "name",
+            "contentBase64"
+          ],
+          "description": "The original document's bytes. Pass null when files is used."
+        },
+        "files": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download_url": {
+                "type": "string"
+              },
+              "file_id": {
+                "type": "string"
+              },
+              "mime_type": {
+                "type": "string"
+              },
+              "file_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "download_url",
+              "file_id"
+            ]
+          },
+          "description": "One file object supplied by your connected app (for example a ChatGPT attachment). Pass [] when file is used."
+        },
+        "externalChecks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Only when the user opts in: compare selected document business fields with GLEIF and IRS TEOS. Sends selected business fields, never the original document, to public registries. Separate evidence, not authenticity verification."
+        },
+        "requestKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional idempotency key (UUID). Omit or pass null to reuse an earlier examination of the same original on this connection.",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "file",
+        "files",
+        "requestKey"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_analyses_list",
+    "title": "List examinations",
+    "description": "Use to find the connected account's recent examinations, including ones started on the website or API. Returns ids, states and creation times, newest first. Read-only.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "limit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 50,
+          "description": "1–50; null for 20."
+        }
+      },
+      "required": [
+        "limit"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_analysis_status",
+    "title": "Examination status",
+    "description": "Use to check an examination's progress with its analysisId, or with the handoffId from an upload link after the user uploaded in the browser. Returns processing, completed, partial, failed, expired or deleted, whether usage was charged or released, and when the report expires. Polling is free and does not advance processing.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analysisId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Analysis id returned by analysis_start, analyses_list or analysis_status. Pass null when handoffId is used.",
+          "format": "uuid"
+        },
+        "handoffId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "handoffId returned by upload_link_create, after the user uploaded in the browser. Pass null when analysisId is used.",
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "analysisId",
+        "handoffId"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_findings_get",
+    "title": "Read findings and metadata",
+    "description": "Use to read a completed or partial examination: forensic summary, source-bound findings with severity and evidence references, page/region observations, document metadata, completed versus unassessed checks, examiner status and limitations. Findings are evidence to assess, not an authenticity verdict. Read-only.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analysisId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Analysis id returned by analysis_start, analyses_list or analysis_status. Pass null when handoffId is used.",
+          "format": "uuid"
+        },
+        "handoffId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "handoffId returned by upload_link_create, after the user uploaded in the browser. Pass null when analysisId is used.",
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "analysisId",
+        "handoffId"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_report_get",
+    "title": "Get the forensic report",
+    "description": "Use when the user wants the deliverable: format pdf returns the actual forensic PDF as an embedded application/pdf resource; format metadata returns the complete structured report and document metadata as JSON. Also returns the signed-in web link. Repeated downloads are free. Reports are deleted 24 hours after creation; an expired report returns expired.",
+    "scope": "forensics:read",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analysisId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Analysis id returned by analysis_start, analyses_list or analysis_status. Pass null when handoffId is used.",
+          "format": "uuid"
+        },
+        "handoffId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "handoffId returned by upload_link_create, after the user uploaded in the browser. Pass null when analysisId is used.",
+          "maxLength": 512
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "pdf",
+            "metadata"
+          ],
+          "description": "pdf for the forensic PDF, metadata for the JSON report."
+        }
+      },
+      "required": [
+        "analysisId",
+        "handoffId",
+        "format"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_analysis_delete",
+    "title": "Delete an examination",
+    "description": "Use only when the user asks to delete an examination now. Deletes the report and any remaining engine copies before the automatic 24-hour deletion. A pending examination is canceled and its reserved unit released; a completed examination stays charged. Cannot be undone.",
+    "scope": "forensics:delete",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analysisId": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The examination to delete."
+        }
+      },
+      "required": [
+        "analysisId"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  }
+]
