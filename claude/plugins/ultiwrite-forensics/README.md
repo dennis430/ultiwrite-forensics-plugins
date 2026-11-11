@@ -1,12 +1,12 @@
 # Ultiwrite Forensics for Claude
 
-Examine an original PDF, Office file or image for construction, typography, layout, metadata and retained editing evidence. Each examination returns source-bound findings, document metadata and a forensic PDF report. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.
+Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.
 
 **No permanent document retention.** Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.
 
 ## What it does
 
-Connects Claude to your own Ultiwrite Forensics account at https://ultiwrite.co through the remote MCP server `https://mcp.ultiwrite.co/mcp`. You can submit one authorized original per examination (PDF, Office, RTF, images or one ZIP of those, up to 48 MiB via browser upload or app attachment retrieval; inline tool payloads stay limited to 3 MiB), follow its status, read source-bound findings and document metadata, and download the forensic PDF report.
+Connects Claude to your own Ultiwrite Forensics account at https://ultiwrite.co through the remote MCP server `https://mcp.ultiwrite.co/mcp`. You can submit one authorized original per examination (PDF, Office, RTF, images or one ZIP of those, up to 48 MiB via browser upload or app attachment retrieval; inline tool payloads stay limited to 3 MiB), follow its status, read source-bound findings and document metadata, and download both the Document Forensics Report PDF and the separate Metadata Analytics Report PDF, structured export and artifact manifest.
 
 ## Install
 
