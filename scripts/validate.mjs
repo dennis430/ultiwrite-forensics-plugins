@@ -43,7 +43,8 @@ export async function validatePublic(directory) {
   for (const path of actual) {
     assert.ok(!path.startsWith('/') && !path.split('/').includes('..'), `Unsafe path ${path}`);
     assert.doesNotMatch(path, /^(app|lib|migrations|deployment|workers|artifacts)\//, 'Private application material');
-    assert.doesNotMatch(path, /(^|\/)\.env|\.(?:pem|key|pdf|sql)$/i, 'Private file type');
+    assert.doesNotMatch(path, /(^|\/)\.env|\.(?:pem|key|pdf|sql|ts|tsx|js|jsx|py|sh)$/i, 'Private file type');
+    if (/\.(?:mjs|cjs)$/i.test(path)) assert.ok(['scripts/validate.mjs', 'scripts/validate.test.mjs'].includes(path), 'Unapproved source file');
     const body = await readFile(join(root, path));
     assert.equal(sha(body), release.files[path], `Stale provenance: ${path}`);
     if (!/\.(png|zip)$/.test(path)) for (const pattern of forbidden) assert.doesNotMatch(body.toString('utf8'), pattern, path);
@@ -82,6 +83,31 @@ export async function validatePublic(directory) {
     execFileSync('unzip', ['-tqq', path]);
     const inside = JSON.parse(execFileSync('unzip', ['-p', path, target === 'plugin-bundle' ? `${identity.slug}/identity.json` : 'identity.json'], { encoding: 'utf8' }));
     assert.deepEqual(inside, identity, target);
+    const members = execFileSync('unzip', ['-Z1', path], { encoding: 'utf8' }).trim().split('\n');
+    const targetDirectories = { openai: 'chatgpt', 'openai-portal': 'openai-portal', 'grok-build': 'grok-build', codex: 'codex', claude: 'claude', cursor: 'cursor', 'gemini-cli': 'gemini-cli', antigravity: 'antigravity', 'microsoft-365': 'microsoft-365', 'mcp-registry': 'mcp-registry' };
+    const exported = targetDirectories[target];
+    if (exported) {
+      const archiveFiles = members.filter((p) => !p.endsWith('/')).sort();
+      assert.deepEqual(actual.filter((p) => p.startsWith(exported + '/')).map((p) => p.slice(exported.length + 1)).sort(), archiveFiles, `Export differs from validated ${target} ZIP`);
+      for (const member of archiveFiles) {
+        const content = execFileSync('unzip', ['-p', path, member], { maxBuffer: 50_000_000 });
+        assert.equal(sha(await readFile(join(root, exported, member))), sha(content), `Export content differs from validated ZIP: ${exported}/${member}`);
+      }
+    }
+    assert.ok(members.every((p) => !p.startsWith('/') && !p.split('/').includes('..')), 'Unsafe archive paths');
+    if (target === 'openai-portal') {
+      assert.ok(members.includes('plugin.json'));
+      assert.ok(members.includes('mcp.json'));
+      const remote = JSON.parse(execFileSync('unzip', ['-p', path, 'mcp.json'], { encoding: 'utf8' }));
+      assert.equal(remote.mcpServers[identity.slug].url, identity.mcpUrl);
+      assert.ok(members.some((p) => /^skills\/[^/]+\/SKILL\.md$/.test(p)));
+      assert.ok(!members.some((p) => /(^|\/)(?:\.?app\.json|hooks(?:\.json)?)(?:\/|$)/i.test(p)), 'Portal excludes app references and hooks');
+      const plugin = JSON.parse(execFileSync('unzip', ['-p', path, 'plugin.json'], { encoding: 'utf8' }));
+      const extension = plugin.extensions?.['com.openai'];
+      for (const obj of [plugin, extension]) if (obj) assert.ok(!['apps', 'hooks'].some((key) => key in obj));
+      const auth = remote.mcpServers[identity.slug].extensions?.['com.openai']?.auth;
+      assert.equal(auth?.type, 'oauth'); assert.equal(auth?.client?.mode, 'dcr'); assert.deepEqual(auth?.baseScopes, identity.oauth.scopes);
+    }
   }
   return { version: identity.version, files: actual.length, packages: Object.keys(packages.packages).length, externalDependencies: validation.externalDependencies };
 }

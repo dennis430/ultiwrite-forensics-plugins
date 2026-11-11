@@ -215,7 +215,7 @@
   {
     "name": "ultiwrite_forensics_findings_get",
     "title": "Read findings and metadata",
-    "description": "Use to read a completed or partial examination: forensic summary, source-bound findings with severity and evidence references, page/region observations, document metadata, completed versus unassessed checks, examiner status and limitations. Findings are evidence to assess, not an authenticity verdict. Read-only.",
+    "description": "Use to read a completed or partial examination: forensic summary, source-bound findings with severity and evidence references, page/region observations, document metadata, completed versus unassessed checks, examiner status and limitations. Partial evidence details require a prior explicit one-unit unlock; status and check states remain free. Findings are evidence to assess, not an authenticity verdict. Read-only.",
     "scope": "forensics:read",
     "inputSchema": {
       "type": "object",
@@ -253,7 +253,7 @@
   {
     "name": "ultiwrite_forensics_report_get",
     "title": "Get the forensic report",
-    "description": "Use when the user wants the deliverable: format pdf returns the actual forensic PDF as an embedded application/pdf resource; format metadata returns the complete structured report and document metadata as JSON. Also returns the signed-in web link. Repeated downloads are free. Reports are deleted 24 hours after creation; an expired report returns expired.",
+    "description": "Use when the user wants a deliverable. format pdf is the Document Forensics Report PDF. format metadata_analytics is the separate Metadata Analytics Report PDF. format result is the structured export. format manifest is the artifact manifest. format bundle is a zip of those required outputs and does not replace the separate files. format metadata remains the published engine report JSON. Partial evidence exports require a prior explicit one-unit unlock with evidence_unlock. Repeated downloads are free. Reports are deleted 24 hours after creation.",
     "scope": "forensics:read",
     "inputSchema": {
       "type": "object",
@@ -279,9 +279,13 @@
           "type": "string",
           "enum": [
             "pdf",
-            "metadata"
+            "metadata",
+            "metadata_analytics",
+            "result",
+            "manifest",
+            "bundle"
           ],
-          "description": "pdf for the forensic PDF, metadata for the JSON report."
+          "description": "pdf, metadata_analytics, result, manifest, bundle, or metadata for the published engine JSON."
         }
       },
       "required": [
@@ -292,6 +296,38 @@
     },
     "annotations": {
       "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ultiwrite_forensics_evidence_unlock",
+    "title": "Unlock partial findings and evidence (one unit)",
+    "description": "Use only after the user explicitly authorizes spending one Ultiwrite Forensics analysis unit to unlock this partial examination's findings, evidence, metadata and available exports. The unsuccessful analysis keeps its refund. Status and check states are free. The first successful unlock consumes exactly one unit; repeats, concurrent calls and later reads consume none. It does not rerun analysis or turn partial evidence into a completed examination. Use the same requestKey for retries; reusing a key for another examination is rejected.",
+    "scope": "forensics:analyze",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analysisId": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The partial examination whose evidence the user authorized unlocking."
+        },
+        "requestKey": {
+          "type": "string",
+          "format": "uuid",
+          "description": "A saved UUID for this explicit unlock; reuse it after an uncertain response."
+        }
+      },
+      "required": [
+        "analysisId",
+        "requestKey"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
       "destructiveHint": false,
       "idempotentHint": true,
       "openWorldHint": false

@@ -5,7 +5,7 @@ description: Retrieve the Ultiwrite Forensics PDF report or the structured metad
 
 # Get the deliverables
 
-1. For the PDF, call `ultiwrite_forensics_report_get` with `format: "pdf"`. It returns the actual PDF as an embedded `application/pdf` resource plus a signed-in web link (`reportUrl`). Offer the file to the user; if your app cannot show embedded files, give them `reportUrl` and explain that it opens after signing in to the same Ultiwrite Forensics account.
-2. For machine-readable results, call it with `format: "metadata"` to get the full structured report and document metadata as JSON.
-3. A PDF exists only for `completed` examinations. For `partial` results, offer the metadata JSON and explain that the examination did not complete.
-4. Repeated downloads are free. Remind the user to save what they need: reports are deleted 24 hours after creation.
+1. For the Document Forensics Report PDF, call `ultiwrite_forensics_report_get` with `format: "pdf"`. For the separate Metadata Analytics Report PDF, use `format: "metadata_analytics"`. Each returns the file plus a signed-in web link (`reportUrl`). If your app cannot show embedded files, give the user `reportUrl`.
+2. For the structured export use `format: "result"`. For the artifact manifest use `format: "manifest"`. `format: "bundle"` is a zip of both PDFs, the export, and the manifest. It does not replace the separate downloads. `format: "metadata"` remains the published engine JSON.
+3. The forensic PDF exists for `completed` examinations. A partial examination can return available PDFs and exports only after an explicit one-unit `ultiwrite_forensics_evidence_unlock`; otherwise its status and check states remain free. Explain the charge and obtain authorization before unlocking; never debit merely to retrieve. Available partial artifacts remain marked partial. Say that it did not complete.
+4. Repeated downloads are free. Remind the user to save what they need: reports are deleted 24 hours after creation. Coverage states stay distinct. Do not describe a failed or empty metadata read as stripped or clean, and do not state a fraud probability.

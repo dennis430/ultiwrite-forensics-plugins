@@ -1,0 +1,20 @@
+{
+  "name": "ultiwrite-forensics",
+  "description": "Ultiwrite Forensics document examination and metadata reports through the authorized ultiwrite.co account.",
+  "category": "productivity",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/dennis430/ultiwrite-forensics-plugins.git",
+    "sha": "a23b73492ee6330e57dd33c129b33e09d1e7160b",
+    "path": "claude/plugins/ultiwrite-forensics"
+  },
+  "homepage": "https://ultiwrite.co",
+  "keywords": [
+    "ultiwrite forensics",
+    "ultiwrite-forensics"
+  ],
+  "domains": [
+    "ultiwrite.co",
+    "mcp.ultiwrite.co"
+  ]
+}

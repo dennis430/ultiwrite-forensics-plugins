@@ -1,7 +1,9 @@
-# Grok
+# Grok Bot, Grok and Cursor
 
-Users: https://grok.com/connectors → New Connector → Custom → `https://mcp.ultiwrite.co/mcp` → complete Ultiwrite Forensics sign-in.
+Official publisher form: https://x.ai/bot/marketplace/submit-a-plugin (checked November 10, 2026). Grok Bot and Cursor are selectable; Grok is marked coming soon. This is separate from the Grok Build GitHub marketplace contribution.
 
-Publisher route: https://x.ai/bot/marketplace/submit-a-plugin (Grok, Grok Bot, Cursor), using the Cursor package as the plugin artifact.
+Publisher: DWS Offshore Fund. Owner: Dennis Liu (dennisl@ultiwrite.co). MCP URL: https://mcp.ultiwrite.co/mcp. Public repository: https://github.com/dennis430/ultiwrite-forensics-plugins. Square logo: https://ultiwrite.co/branding/ultiwrite-logo.png. Description: Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.
+
+In-app test instructions: connect the remote server with OAuth, confirm capabilities and allowance, submit one synthetic authorized original through supported transport or the secure browser handoff, poll status, read evidence and retrieve both PDFs. Reconnect after revocation and confirm tenant failures. Native Grok Bot/Cursor tests remain unverified; do not check the form's tested assertion until they pass. Do not duplicate submissions across the shared form. Custom-connector installation does not prove directory acceptance.
 
 No permanent document retention: Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.
