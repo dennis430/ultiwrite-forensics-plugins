@@ -253,7 +253,7 @@
   {
     "name": "ultiwrite_forensics_report_get",
     "title": "Get the forensic report",
-    "description": "Use when the user wants the deliverable: format pdf returns the actual forensic PDF as an embedded application/pdf resource; format metadata returns the complete structured report and document metadata as JSON. Also returns the signed-in web link. Repeated downloads are free. Reports are deleted 24 hours after creation; an expired report returns expired.",
+    "description": "Use when the user wants a deliverable. format pdf is the Document Forensics Report PDF. format metadata_analytics is the separate Metadata Analytics Report PDF. format result is the structured export. format manifest is the artifact manifest. format bundle is a zip of those required outputs and does not replace the separate files. format metadata remains the published engine report JSON. Repeated downloads are free. Reports are deleted 24 hours after creation.",
     "scope": "forensics:read",
     "inputSchema": {
       "type": "object",
@@ -279,9 +279,13 @@
           "type": "string",
           "enum": [
             "pdf",
-            "metadata"
+            "metadata",
+            "metadata_analytics",
+            "result",
+            "manifest",
+            "bundle"
           ],
-          "description": "pdf for the forensic PDF, metadata for the JSON report."
+          "description": "pdf, metadata_analytics, result, manifest, bundle, or metadata for the published engine JSON."
         }
       },
       "required": [

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ultiwrite-forensics",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "Ultiwrite Forensics",
         "shortDescription": "Document forensics & metadata",
-        "longDescription": "Examine an original PDF, Office file or image for construction, typography, layout, metadata and retained editing evidence. Each examination returns source-bound findings, document metadata and a forensic PDF report. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Findings are evidence to assess, not an authenticity certificate.",
+        "longDescription": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Findings are evidence to assess, not an authenticity certificate.",
         "developerName": "DWS Offshore Fund",
         "category": "Productivity",
         "capabilities": [],
@@ -43,8 +43,8 @@
             {
               "description": "Examine an attached PDF",
               "prompt": "Check this bank statement PDF for signs of editing.",
-              "tools_triggered": "ultiwrite_forensics_analysis_start, ultiwrite_forensics_analysis_status",
-              "expected_behavior": "Submits the attached file as one examination, returns an analysisId with state processing, then polls status until it is completed or partial. Repeating the request with the same file returns the same analysisId without a second charge."
+              "tools_triggered": "ultiwrite_forensics_analysis_start, ultiwrite_forensics_upload_link_create, ultiwrite_forensics_analysis_status",
+              "expected_behavior": "Uses only a host-provided downloadable attachment or exact original bytes. If attachment access is unavailable, returns the signed first-party upload handoff and resumes after upload. Starts exactly one authorized examination, polls status, and reuses its request key after a network interruption without a second charge."
             },
             {
               "description": "Read findings and metadata",
@@ -53,10 +53,10 @@
               "expected_behavior": "Returns findings with ids, severities, explanations and evidence references; document metadata; completed versus unassessed checks; examiner status and limitations. States that findings are not an authenticity verdict."
             },
             {
-              "description": "Download the report",
-              "prompt": "Give me the forensic PDF report for that examination.",
+              "description": "Download both reports",
+              "prompt": "Give me the forensic PDF, the metadata analytics PDF, and the zip of all deliverables.",
               "tools_triggered": "ultiwrite_forensics_report_get",
-              "expected_behavior": "Returns the actual PDF as an embedded application/pdf resource with its SHA-256 and a signed-in web link; notes the report is deleted 24 hours after creation."
+              "expected_behavior": "Returns the Document Forensics Report PDF, and can return the Metadata Analytics Report, the structured export, the manifest, and a zip of those files. Each download includes its SHA-256 and a signed-in web link. Repeated downloads match those hashes. Reports are deleted 24 hours after creation."
             }
           ],
           "negative": [
@@ -76,7 +76,7 @@
         }
       },
       "publication": {
-        "release_notes": "Ultiwrite Forensics connector packages 1.0.4."
+        "release_notes": "Ultiwrite Forensics connector packages 1.0.6."
       }
     }
   }

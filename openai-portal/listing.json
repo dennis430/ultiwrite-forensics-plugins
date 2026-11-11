@@ -1,0 +1,43 @@
+{
+  "name": "Ultiwrite Forensics",
+  "slug": "ultiwrite-forensics",
+  "version": "1.0.6",
+  "shortDescription": "Document forensics. Metadata analysis. No permanent document retention.",
+  "description": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.",
+  "positioning": "Document Forensics & Metadata Intelligence",
+  "categories": [
+    "productivity",
+    "security",
+    "documents"
+  ],
+  "keywords": [
+    "document forensics",
+    "pdf forensics",
+    "metadata",
+    "tamper detection",
+    "document fraud",
+    "temporary processing"
+  ],
+  "publisher": "DWS Offshore Fund",
+  "website": "https://ultiwrite.co",
+  "mcpUrl": "https://mcp.ultiwrite.co/mcp",
+  "apiBaseUrl": "https://ultiwrite.co/api/v1",
+  "authentication": {
+    "type": "OAuth 2.1",
+    "pkce": "S256",
+    "issuer": "https://mcp.ultiwrite.co",
+    "resource": "https://mcp.ultiwrite.co/mcp",
+    "scopes": [
+      "forensics:read",
+      "forensics:analyze",
+      "forensics:delete"
+    ]
+  },
+  "privacyUrl": "https://ultiwrite.co/privacy",
+  "termsUrl": "https://ultiwrite.co/terms",
+  "supportUrl": "https://ultiwrite.co/support",
+  "supportContact": "support@dwsoffshorepartners.com",
+  "icon": "https://ultiwrite.co/branding/ultiwrite-logo.png",
+  "installationGuide": "https://ultiwrite.co/docs/mcp",
+  "publicationStatus": "prepared_not_submitted"
+}
