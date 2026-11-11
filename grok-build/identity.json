@@ -1,0 +1,99 @@
+{
+  "$comment": "Canonical public identity; validated by lib/productIdentity.ts and consumed by the application and distribution builder. No credentials.",
+  "canonicalName": "Ultiwrite Forensics",
+  "displayName": "Ultiwrite Forensics",
+  "name": "ultiwrite-forensics",
+  "slug": "ultiwrite-forensics",
+  "version": "1.0.8",
+  "publisher": "DWS Offshore Fund",
+  "positioning": "Document Forensics & Metadata Intelligence",
+  "description": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.",
+  "shortDescription": "Document forensics. Metadata analysis. No permanent document retention.",
+  "homepage": "https://ultiwrite.co",
+  "mcpUrl": "https://mcp.ultiwrite.co/mcp",
+  "apiBaseUrl": "https://ultiwrite.co/api/v1",
+  "mcpRegistryName": "co.ultiwrite/forensics",
+  "toolPrefix": "ultiwrite_forensics_",
+  "oauth": {
+    "issuer": "https://mcp.ultiwrite.co",
+    "resource": "https://mcp.ultiwrite.co/mcp",
+    "scopes": [
+      "forensics:read",
+      "forensics:analyze",
+      "forensics:delete"
+    ]
+  },
+  "packages": {
+    "npm": {
+      "name": "@ultiwrite/forensics-mcp",
+      "status": "proposed_ownership_unverified",
+      "distribution": "remote_endpoint_no_npm_package_required"
+    },
+    "publicRepository": {
+      "name": "dennis430/ultiwrite-forensics-plugins",
+      "status": "published"
+    },
+    "microsoftAppId": "6f0b8d7e-4d1a-4c55-9a0e-3b5f2f1c7a21",
+    "microsoftDcrReferenceId": null
+  },
+  "registry": {
+    "name": "co.ultiwrite/forensics",
+    "status": "prepared_not_published",
+    "schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json"
+  },
+  "brandAssets": {
+    "logo": "distribution/assets/logo.png",
+    "composerIcon": "distribution/assets/composer-icon.png",
+    "colorIcon": "distribution/assets/color-192.png",
+    "outlineIcon": "distribution/assets/outline-32.png",
+    "publicIcon": "https://ultiwrite.co/branding/ultiwrite-logo.png"
+  },
+  "capabilities": {
+    "documentForensics": true,
+    "metadataAnalysis": true,
+    "reportExport": [
+      "json",
+      "pdf"
+    ],
+    "externalCoherence": "explicit_opt_in_subject_to_live_capabilities",
+    "aiExaminer": "subject_to_live_capabilities",
+    "businessDiligence": false,
+    "sharedEntitlements": false
+  },
+  "retention": {
+    "badge": "No permanent document retention",
+    "headline": "Your documents are analyzed. Then deleted.",
+    "summary": "Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate.",
+    "windows": "Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.",
+    "sourceMaxMinutes": 60,
+    "reportMaxHours": 24
+  },
+  "urls": {
+    "privacy": "https://ultiwrite.co/privacy",
+    "dataRetention": "https://ultiwrite.co/data-retention",
+    "security": "https://ultiwrite.co/security",
+    "terms": "https://ultiwrite.co/terms",
+    "support": "https://ultiwrite.co/support",
+    "mcpDocs": "https://ultiwrite.co/docs/mcp",
+    "apiDocs": "https://ultiwrite.co/docs",
+    "pricing": "https://ultiwrite.co/pricing",
+    "icon": "https://ultiwrite.co/branding/ultiwrite-logo.png"
+  },
+  "contacts": {
+    "support": "support@dwsoffshorepartners.com",
+    "privacy": "privacy@dwsoffshorepartners.com"
+  },
+  "keywords": [
+    "document forensics",
+    "pdf forensics",
+    "metadata",
+    "tamper detection",
+    "document fraud",
+    "temporary processing"
+  ],
+  "categories": [
+    "productivity",
+    "security",
+    "documents"
+  ]
+}

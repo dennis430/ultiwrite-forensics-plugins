@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "publisher": "DWS Offshore Fund",
+  "owner": "Dennis Liu",
+  "ownerContact": "dennisl@ultiwrite.co",
+  "mcpUrl": "https://mcp.ultiwrite.co/mcp",
+  "sources": [
+    {
+      "path": "cline/schemas/mcp.schema.json",
+      "source": "https://raw.githubusercontent.com/cline/marketplace/6969aa8505f2be81bb3627e47ab0037d234aeaf7/schemas/mcp.schema.json",
+      "sourceCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "sha256": "2321317a9f0b506082207d4e20e0e7865c457c7a409972e4b12bc0f8e0817d02",
+      "note": "Unmodified upstream snapshot fetched and hashed during source refresh; date precision is one day.",
+      "checkedOn": "2026-11-11"
+    },
+    {
+      "path": "cline/schemas/common.schema.json",
+      "source": "https://raw.githubusercontent.com/cline/marketplace/6969aa8505f2be81bb3627e47ab0037d234aeaf7/schemas/common.schema.json",
+      "sourceCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "sha256": "ecc424118999614bbeeede9c8d91e51d72acbb881c7b89f00f7be4fd4b4416a5",
+      "note": "Unmodified upstream snapshot fetched and hashed during source refresh; date precision is one day.",
+      "checkedOn": "2026-11-11"
+    },
+    {
+      "path": "cline/tags.json",
+      "source": "https://raw.githubusercontent.com/cline/marketplace/6969aa8505f2be81bb3627e47ab0037d234aeaf7/tags.json",
+      "sourceCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "sha256": "5c0a0acc2e5ece6cd3d606f4b36cbab848e35d2e448e66c78e8292b4599c1eb4",
+      "note": "Unmodified upstream snapshot fetched and hashed during source refresh; date precision is one day.",
+      "checkedOn": "2026-11-11"
+    },
+    {
+      "path": "cline/UPSTREAM-LICENSE",
+      "source": "https://raw.githubusercontent.com/cline/marketplace/6969aa8505f2be81bb3627e47ab0037d234aeaf7/LICENSE",
+      "sourceCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "sha256": "f704446a5f1271608805598b557e4288cf8580477ea038c9c3d8b361f693f6b8",
+      "note": "Unmodified upstream snapshot fetched and hashed during source refresh; date precision is one day.",
+      "checkedOn": "2026-11-11"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Cline schema2020 and canonical tags",
+      "command": "npx tsx --test tests/secondaryDistribution.test.ts",
+      "result": "passed",
+      "nativeHostVerified": false
+    },
+    {
+      "name": "Official Cline marketplace generator",
+      "upstreamCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "command": "npm run generate",
+      "result": "passed; generated catalog with204 entries including prepared Ultiwrite entry",
+      "executedAt": "2026-11-11T00:07:35.545145+00:00",
+      "submissionPerformed": false
+    },
+    {
+      "name": "Official Cline marketplace check",
+      "upstreamCommit": "6969aa8505f2be81bb3627e47ab0037d234aeaf7",
+      "command": "npm run validate",
+      "result": "Validation passed:204 entries.",
+      "nativeHostVerified": false
+    }
+  ],
+  "nativeProof": "None asserted; each client must complete OAuth, authorized synthetic examination, both PDFs and negative cases.",
+  "unresolved": [
+    "No Glama provider-issued claim token or private health profile",
+    "No Oz managed installation identifier",
+    "No native VSCode/Warp/Cline authenticated workflow evidence"
+  ]
+}

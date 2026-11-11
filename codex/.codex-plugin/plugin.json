@@ -1,6 +1,6 @@
 {
   "name": "ultiwrite-forensics",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -8,6 +8,7 @@
   },
   "homepage": "https://ultiwrite.co",
   "license": "Proprietary",
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Ultiwrite Forensics",
     "shortDescription": "Document forensics & metadata",

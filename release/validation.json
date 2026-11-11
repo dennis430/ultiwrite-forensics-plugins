@@ -1,8 +1,8 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.4",
-  "manifestSha256": "26e3959cc34a3e5675620ad93a48c0de6f337b68bd494bc8941e4de07cf13697",
-  "validatedAt": "2026-11-09T04:26:38.127Z",
+  "version": "1.0.8",
+  "manifestSha256": "81c28e1d7d87562405f55b0bd239eb5d19caf3720fc543daebfabae93331b1c7",
+  "validatedAt": "2026-11-11T06:52:08.321Z",
   "results": {
     "openai": {
       "checks": {
@@ -14,6 +14,36 @@
         "5 positive / 3 negative review cases": "pass",
         "review cases name registered tools": "pass",
         "one MCP server, OAuth, no secret or headers": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "openai-portal": {
+      "checks": {
+        "schema:plugin.json": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "host identity and OAuth isolation in actual ZIP": "pass",
+        "portal excludes app references and hooks": "pass",
+        "native archive root and safe paths": "pass",
+        "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "grok-build": {
+      "checks": {
+        "full immutable public pin": "pass",
+        "brand-scoped discovery": "pass",
         "archive hash, size and version": "pass",
         "canonical identity in actual ZIP": "pass",
         "canonical listing in actual ZIP": "pass",
@@ -119,6 +149,7 @@
     "microsoft-365": {
       "checks": {
         "schema:manifest.json": "pass",
+        "static tool registry parity": "pass",
         "color icon 192x192": "pass",
         "outline icon 32x32": "pass",
         "archive hash, size and version": "pass",
@@ -137,9 +168,11 @@
         "archive hash, size and version": "pass",
         "canonical identity in actual ZIP": "pass",
         "embedded openai matches validated host ZIP": "pass",
+        "embedded openai-portal matches validated host ZIP": "pass",
         "embedded codex matches validated host ZIP": "pass",
         "embedded claude matches validated host ZIP": "pass",
         "embedded cursor matches validated host ZIP": "pass",
+        "embedded grok-build matches validated host ZIP": "pass",
         "embedded mcp-registry matches validated host ZIP": "pass",
         "embedded antigravity matches validated host ZIP": "pass",
         "embedded gemini-cli matches validated host ZIP": "pass",
@@ -153,9 +186,14 @@
     }
   },
   "externalDependencies": {
+    "grok-build": [
+      "Native Grok Build verification, Dennis's brand ownership proof for the personal-account repository, full-catalog CI and explicit upstream submission authorization remain required. Contribution currently pins the existing public package, not the new unpublished package."
+    ],
     "microsoft-365": [
       "Register the DCR configuration in the Teams Developer Portal and replace its referenceId before submission."
     ]
   },
-  "submissionReady": false
+  "submissionReady": false,
+  "localPackageValidationPassed": true,
+  "submissionReadinessNote": "Package validation is separate from native-host proof, credentials, ownership, current portal scans and owner authorization. See PLATFORM_READINESS.md."
 }

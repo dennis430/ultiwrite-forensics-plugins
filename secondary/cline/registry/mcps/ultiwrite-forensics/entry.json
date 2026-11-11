@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../schemas/mcp.schema.json",
+  "id": "ultiwrite-forensics",
+  "type": "mcp",
+  "name": "Ultiwrite Forensics",
+  "tagline": "Source-bound document forensics with two separate PDF reports.",
+  "description": "Examine an authorized original PDF, Office file, RTF, image or supported ZIP through the Ultiwrite Forensics remote MCP service. Check live capabilities and allowance first. Each successful examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, structured export and expiring artifact manifest. Signup is free; examinations use this product's allowance. If a Cline attachment is not accessible to the service, use the first-party secure browser upload handoff. Findings are evidence for review, not an authenticity guarantee.",
+  "author": {
+    "name": "DWS Offshore Fund",
+    "url": "https://ultiwrite.co"
+  },
+  "homepage": "https://ultiwrite.co",
+  "repo": "https://github.com/dennis430/ultiwrite-forensics-plugins",
+  "icon": "https://ultiwrite.co/branding/ultiwrite-logo.png",
+  "tags": [
+    "productivity",
+    "research",
+    "security"
+  ],
+  "license": "Proprietary",
+  "verified": false,
+  "featured": false,
+  "install": {
+    "args": [
+      "ultiwrite-forensics",
+      "--transport",
+      "http",
+      "https://mcp.ultiwrite.co/mcp"
+    ],
+    "notes": "Complete the browser OAuth flow for a Forensics account. Approve examination only after reviewing capabilities, consent and usage. Local validation is not Cline review or authenticated native-client proof."
+  }
+}

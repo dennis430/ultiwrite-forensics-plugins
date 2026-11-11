@@ -14,3 +14,5 @@ description: Explain Ultiwrite Forensics findings and document metadata. Use aft
    - Examiner status and the stated limitations.
 3. Findings are evidence to assess, not a fraud verdict. "No material finding" does not establish authenticity. Do not invent confidence percentages or scores; use only the severities and wording returned.
 4. Optional document-bound public-record comparisons are off by default. When externalCoherence is present, read its separate status, source links, retrieval times, compared values and limitations. Do not turn agreement into authenticity verification or an unavailable/inconclusive lookup into contradiction.
+
+If partial evidence is locked, show its free status/check states and explain that detailed findings and exports require an explicit one-unit unlock. Use `ultiwrite_forensics_evidence_unlock` only after the user authorizes that charge; a request to read findings alone does not authorize it. Reuse the same saved UUID requestKey after an uncertain unlock response.
