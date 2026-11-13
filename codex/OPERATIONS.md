@@ -1,6 +1,6 @@
 # Connector operations and customer recovery
 
-These procedures apply to Ultiwrite Forensics connector 1.0.11. They preserve the connected workspace boundary and the user's intended examination. Runtime documentation: https://ultiwrite.co/docs/mcp and https://ultiwrite.co/docs.
+These procedures apply to Ultiwrite Forensics connector 1.0.12. They preserve the connected workspace boundary and the user's intended examination. Runtime documentation: https://ultiwrite.co/docs/mcp and https://ultiwrite.co/docs.
 
 ## Before intake
 
@@ -37,7 +37,7 @@ For MCP, revoke the product connection and remove the host configuration when de
 
 GitHub Actions or Vercel outages do not invalidate a source review, package hash or local check. They do prevent claims that hosted checks ran, a deployment completed or the new runtime was exercised in production. Keep source merge, package preparation, directory acceptance and deployment as separately evidenced states. After service recovery, verify the intended existing project/source revision, migrations and runtime configuration through the authorized deployment workflow, then repeat the synthetic journey against the deployed service.
 
-When escalating, provide product name, connector version 1.0.11, host/version, time with timezone, sanitized error code, saved request/analysis identifier, last known status and whether the failure was before or after acceptance. Use a protected channel if support later requests sensitive evidence. Never include secrets or customer files in GitHub issues or directory submissions.
+When escalating, provide product name, connector version 1.0.12, host/version, time with timezone, sanitized error code, saved request/analysis identifier, last known status and whether the failure was before or after acceptance. Use a protected channel if support later requests sensitive evidence. Never include secrets or customer files in GitHub issues or directory submissions.
 
 ## Service and customer retention boundaries
 

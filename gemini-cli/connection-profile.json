@@ -3,7 +3,7 @@
   "formatVersion": 1,
   "purpose": "Product-owned planning profile; not an official manifest for an unverified host.",
   "product": "ultiwrite-forensics",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "displayName": "Ultiwrite Forensics",
   "homepage": "https://ultiwrite.co",
   "endpoint": "https://mcp.ultiwrite.co/mcp",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ultiwrite-forensics",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "Ultiwrite Forensics",
         "shortDescription": "Document forensics & metadata",
-        "longDescription": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Findings are evidence to assess, not an authenticity certificate.",
+        "longDescription": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Decision profiles for invoice/AP, contract/diligence, and pre-sharing assurance turn the same source-bound evidence into a focused question, consequence, credible alternatives, and ranked next-evidence requests without starting a broader business investigation. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Findings are evidence to assess, not an authenticity certificate.",
         "developerName": "DWS Offshore Fund",
         "category": "Productivity",
         "capabilities": [],
@@ -78,7 +78,7 @@
         }
       },
       "publication": {
-        "release_notes": "Ultiwrite Forensics 1.0.11: nine-language REST reference and runnable intake/recovery clients, plus the official Meta Muse packet and enterprise operations; retains original-byte intake, recovery and artifact workflows."
+        "release_notes": "Ultiwrite Forensics 1.0.12: adds admitted general, invoice/AP, contract/diligence and pre-sharing decision profiles with materiality-specific consequences and ranked evidence requests; adds one earlier-PDF comparison when current engine capabilities admit it. Original-byte identity, one-unit examination accounting, temporary retention and complete artifact retrieval remain unchanged."
       }
     }
   }

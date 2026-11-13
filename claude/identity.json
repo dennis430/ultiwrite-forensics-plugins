@@ -4,10 +4,10 @@
   "displayName": "Ultiwrite Forensics",
   "name": "ultiwrite-forensics",
   "slug": "ultiwrite-forensics",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "publisher": "DWS Offshore Fund",
   "positioning": "Document Forensics & Metadata Intelligence",
-  "description": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.",
+  "description": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Decision profiles for invoice/AP, contract/diligence, and pre-sharing assurance turn the same source-bound evidence into a focused question, consequence, credible alternatives, and ranked next-evidence requests without starting a broader business investigation. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.",
   "shortDescription": "Document forensics. Metadata analysis. No permanent document retention.",
   "homepage": "https://ultiwrite.co",
   "mcpUrl": "https://mcp.ultiwrite.co/mcp",
@@ -57,6 +57,13 @@
     ],
     "externalCoherence": "explicit_opt_in_subject_to_live_capabilities",
     "aiExaminer": "subject_to_live_capabilities",
+    "decisionProfiles": [
+      "general",
+      "invoice-ap",
+      "contract-diligence",
+      "pre-sharing"
+    ],
+    "referenceComparison": "optional_earlier_pdf_subject_to_live_capabilities",
     "businessDiligence": false,
     "sharedEntitlements": false
   },
