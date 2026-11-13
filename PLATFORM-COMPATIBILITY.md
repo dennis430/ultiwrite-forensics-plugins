@@ -1,0 +1,27 @@
+# Platform compatibility and submission tailoring
+
+Release 1.0.9 carries one product identity and remote OAuth endpoint. Host layouts are adapters around that contract, not independent backends. Use the applicable prepared layout and current official host documentation. `connection-profile.json` is a product-owned portable description for integration planning, not an official host manifest or a command to paste into every client.
+
+| Platform | Use these artifacts | Installation/review focus | Evidence still required |
+|---|---|---|---|
+| OpenAI / ChatGPT | `chatgpt/`, `openai-portal/`, their review cases and skills | With MCP upload uses remote `mcp.json`; OAuth DCR, supported file retrieval and first-party handoff | Organization access, domain proof, protected reviewer setup, current portal scan, actual host journey and approval |
+| Claude / Claude Code | Root marketplace and `claude/` | Repository plugin installation and remote connector submission are separate routes; preserve connection recovery | Current authenticated host journey and separate connector-directory review |
+| Cursor | Root `.cursor-plugin/`, `mcp.json`, `cursor/` | OAuth remote URL and one connector per workspace; relative assets | Current native journey and official marketplace review |
+| Codex | Root `.codex-plugin/`, `.mcp.json`, `config.toml.example`, `codex/` | Login through `codex mcp login ultiwrite-forensics`; portable OpenAI and Codex compatibility manifests stay separate | Current version compatibility and authenticated host journey |
+| Google Antigravity | `antigravity/` | Native manifest/config are prepared; validate using the installed supported CLI and current host requirements | Native CLI proof, OAuth journey, and any partner intake |
+| Gemini CLI | Root extension and `gemini-cli/` | Repository extension installation, `/mcp auth`, and runtime capabilities | Authenticated CLI journey; gallery acceptance is separate |
+| Grok Build | `grok-build/` | Native `.grok-plugin` artifact and separate catalog contribution; contribution pin may refer to an older public version | Current immutable public pin, brand proof, official full-catalog checks and actual native journey |
+| Grok Bot / Grokbot | `guides/grok.md`, portable profile and review guide | Shared publisher intake is distinct from Grok Build. Use exactly the supported product in the current form | In-app tests, owner prerequisites and current form review; no invented bot SDK |
+| Grok consumer | `guides/grok.md` | Earlier source evidence marked consumer support coming soon; verify current official availability | A supported current integration surface before claiming installability |
+| Meta / Muse / Meta Muse | `guides/meta-muse.md`, portable profile and review guide | Exact product/program and an official connector or submission specification are not established by this repository | Official product URL, publisher program, auth/transport/package contract and native validation before a host manifest can be produced |
+| EmDash | `guides/emdash.md`, portable profile and review guide | Official coding-orchestrator documentation describes custom HTTP MCP and per-agent sync; it does not define a universal plugin ZIP or OAuth callback | Each target agent must support HTTP MCP and complete native OAuth; full examination proof and any directory route remain unverified |
+| Microsoft 365 Copilot | `microsoft-365/` | Teams app `agentConnectors` package and separate OAuth portal configuration | Genuine portal-issued DCR reference, tenant tests and review; package remains blocked for submission until then |
+| Official MCP Registry | `server.json`, `mcp-registry/` | Validate reverse-DNS entry, independently prove namespace ownership | Namespace proof, publisher validation and authorized publication |
+| VS Code / GitHub Copilot | `guides/vscode-github-copilot.md` | HTTP server configuration and OAuth sign-in; no automatic Microsoft 365 support | Current installed-client proof and any separate registry acceptance |
+| Mistral Le Chat / Vibe | `guides/mistral.md` | Remote OAuth connector or documented CLI configuration | Supported host version and native account/examination journey |
+| Cline, Warp, Glama | `secondary/` | Channel-specific prepared files or instructions, with provenance | Channel's current schema, owner prerequisites and review |
+| ReadMe / Mintlify | `guides/readme.md`, `guides/mintlify.md` | Documentation hosting using the public OpenAPI reference | Documentation project access and publication; not plugin-directory acceptance |
+
+For an unverified platform, the work package is ready for intake: product profile, scoped tool catalog, enterprise/data-handling guide, synthetic acceptance plan, brand assets and support/privacy/terms URLs. It is intentionally not labeled a host-native package. Once the official specification is known, adapt the smallest necessary configuration, preserve the endpoint and scope boundaries, validate the actual archive, and record the real host outcome. Do not reuse flagship registrations or claim a proposed npm namespace is owned.
+
+See [SUBMISSIONS.md](SUBMISSIONS.md) for readiness, [REVIEWER-GUIDE.md](REVIEWER-GUIDE.md) for proof, and [OPERATIONS.md](OPERATIONS.md) for customer recovery. Credentials must stay in protected portal fields or secret management, never in this public repository.

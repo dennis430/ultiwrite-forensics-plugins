@@ -1,8 +1,8 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.8",
-  "manifestSha256": "81c28e1d7d87562405f55b0bd239eb5d19caf3720fc543daebfabae93331b1c7",
-  "validatedAt": "2026-11-11T06:52:08.321Z",
+  "version": "1.0.9",
+  "manifestSha256": "62f1252453fca6b1b9cb387f104fc6e3dc034474379a6114d731afd2b221f1b7",
+  "validatedAt": "2026-11-13T16:52:40.367Z",
   "results": {
     "openai": {
       "checks": {
@@ -195,5 +195,5 @@
   },
   "submissionReady": false,
   "localPackageValidationPassed": true,
-  "submissionReadinessNote": "Package validation is separate from native-host proof, credentials, ownership, current portal scans and owner authorization. See PLATFORM_READINESS.md."
+  "submissionReadinessNote": "Package validation is separate from native-host proof, credentials, ownership, current portal scans and owner authorization. See PLATFORM-COMPATIBILITY.md and REVIEWER-GUIDE.md in the package."
 }

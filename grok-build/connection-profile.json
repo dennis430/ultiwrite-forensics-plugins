@@ -1,0 +1,138 @@
+{
+  "format": "ultiwrite-forensics-connection-profile",
+  "formatVersion": 1,
+  "purpose": "Product-owned planning profile; not an official manifest for an unverified host.",
+  "product": "ultiwrite-forensics",
+  "version": "1.0.9",
+  "displayName": "Ultiwrite Forensics",
+  "homepage": "https://ultiwrite.co",
+  "endpoint": "https://mcp.ultiwrite.co/mcp",
+  "transport": "streamable-http",
+  "authentication": {
+    "type": "oauth",
+    "dynamicClientRegistration": true,
+    "pkce": "S256",
+    "issuer": "https://mcp.ultiwrite.co",
+    "resource": "https://mcp.ultiwrite.co/mcp",
+    "scopes": [
+      "forensics:read",
+      "forensics:analyze",
+      "forensics:delete"
+    ]
+  },
+  "api": {
+    "baseUrl": "https://ultiwrite.co/api/v1",
+    "documentation": "https://ultiwrite.co/docs",
+    "credentials": "separate_customer_api_key_not_mcp_oauth_token"
+  },
+  "tools": [
+    {
+      "name": "ultiwrite_forensics_account_get",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_capabilities_get",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_upload_link_create",
+      "scope": "forensics:analyze",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_start",
+      "scope": "forensics:analyze",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analyses_list",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_status",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_findings_get",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_report_get",
+      "scope": "forensics:read",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_evidence_unlock",
+      "scope": "forensics:analyze",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_delete",
+      "scope": "forensics:delete",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "policy": {
+    "privacy": "https://ultiwrite.co/privacy",
+    "terms": "https://ultiwrite.co/terms",
+    "retention": "https://ultiwrite.co/data-retention",
+    "support": "https://ultiwrite.co/support"
+  },
+  "capabilitiesSource": "ultiwrite_forensics_capabilities_get",
+  "acceptance": "prepared_not_native_host_verified"
+}

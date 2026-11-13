@@ -35,6 +35,18 @@ test('rehashing an injected private source or modified host tree cannot bypass a
   await revise(root, 'chatgpt/private-engine.ts', 'synthetic private source marker');
   await assert.rejects(validatePublic(root), /Private file type|validated.*ZIP/);
 }));
+test('rehashing a portable profile cannot substitute another product endpoint or broader OAuth authority', () => fixture(async (root) => {
+  const path = 'connection-profile.json';
+  const original = JSON.parse(await readFile(join(root, path), 'utf8'));
+  const changedEndpoint = structuredClone(original);
+  changedEndpoint.endpoint = 'https://mcp.dwsoffshorepartners.com/mcp';
+  await revise(root, path, JSON.stringify(changedEndpoint));
+  await assert.rejects(validatePublic(root), /Portable profile endpoint/);
+  const changedScopes = structuredClone(original);
+  changedScopes.authentication.scopes.push('platform:admin');
+  await revise(root, path, JSON.stringify(changedScopes));
+  await assert.rejects(validatePublic(root), /Portable profile cannot widen/);
+}));
 test('rehashing changed host documentation still requires exact validated archive content', () => fixture(async (root) => {
   await revise(root, 'chatgpt/README.md', '# changed after package validation');
   await assert.rejects(validatePublic(root), /Export content differs from validated ZIP/);
