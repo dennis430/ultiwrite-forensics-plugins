@@ -1,6 +1,6 @@
 # Ultiwrite Forensics enterprise integration
 
-This guide covers connector release 1.0.10 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
+This guide covers connector release 1.0.11 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
 
 ## Choose the integration boundary
 
@@ -62,3 +62,7 @@ Public-record comparisons are optional, require explicit opt-in and current capa
 ## Operate and support
 
 Use [OPERATIONS.md](OPERATIONS.md) for rotation, disconnects, partial results, expiration and incident handoff. Public policy references are [privacy](https://ultiwrite.co/privacy), [security](https://ultiwrite.co/security), [retention](https://ultiwrite.co/data-retention), and [terms](https://ultiwrite.co/terms). Contact support@dwsoffshorepartners.com with the product name, UTC time, host/version, connector version, sanitized error code, request/analysis identifier and expected behavior. Never email originals, API keys, refresh tokens, passwords or unredacted report findings as the first diagnostic step.
+
+## Programming languages and API reference
+
+Use the [searchable customer API reference](https://ultiwrite.co/docs/reference) with its global selector for cURL, JavaScript, TypeScript, Python, Java, C#/.NET, Go, PHP and Ruby. The [language integration guide](https://ultiwrite.co/docs/languages) provides downloadable source clients for direct and multipart intake, durable reconciliation, bounded polling and all report formats. Read request/response schemas, required scopes, idempotency and errors for every endpoint before integration. Source clients use a customer REST key; MCP uses the separate first-party OAuth connection described above. A signed original-byte transfer uses only its returned method and headers, without sending the REST bearer to storage. Locally validated examples are not proof of live host acceptance or directory approval.

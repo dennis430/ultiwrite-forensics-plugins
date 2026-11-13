@@ -1,6 +1,6 @@
 # Reviewer and enterprise acceptance journey
 
-Use only an authorized synthetic fixture without personal or customer data. This document is a repeatable test plan for connector 1.0.10, not a claim that every host has passed. Record the host/version, product runtime revision if exposed, connector version, date/time, request identifier, outcome and sanitized evidence for each case. A structural package check cannot replace a real host invocation.
+Use only an authorized synthetic fixture without personal or customer data. This document is a repeatable test plan for connector 1.0.11, not a claim that every host has passed. Record the host/version, product runtime revision if exposed, connector version, date/time, request identifier, outcome and sanitized evidence for each case. A structural package check cannot replace a real host invocation.
 
 ## Prepare
 

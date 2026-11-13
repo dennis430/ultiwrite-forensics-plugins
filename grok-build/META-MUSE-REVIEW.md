@@ -1,6 +1,6 @@
 # Meta Muse Connector Platform review packet
 
-Prepared for Ultiwrite Forensics 1.0.10 against the official [Meta Muse Connector Platform](https://platform.muse.ai/) and [connector guidelines](https://platform.muse.ai/docs), retrieved November 13, 2026. Meta's [Connect recap](https://developers.meta.com/blog/meta-connect-recap/) links the Muse platform. This identifies the actual program; it is separate from the native [Muse Code MCP setup](muse-code/README.md).
+Prepared for Ultiwrite Forensics 1.0.11 against the official [Meta Muse Connector Platform](https://platform.muse.ai/) and [connector guidelines](https://platform.muse.ai/docs), retrieved November 13, 2026. Meta's [Connect recap](https://developers.meta.com/blog/meta-connect-recap/) links the Muse platform. This identifies the actual program; it is separate from the native [Muse Code MCP setup](muse-code/README.md).
 
 Status: prepared documentation and tool-classification proposal. No portal submission, business verification, reviewer-account provisioning, native Muse invocation or approval is claimed. The public connector endpoint is `https://mcp.ultiwrite.co/mcp`. The current runtime's capability tool determines operational availability.
 

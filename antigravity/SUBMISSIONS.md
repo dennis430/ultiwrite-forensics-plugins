@@ -1,6 +1,6 @@
 # Directory and publication status
 
-This public repository contains connector source layouts and prepared packages, version 1.0.10. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
+This public repository contains connector source layouts and prepared packages, version 1.0.11. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
 
 | Target | Public files | Remaining external step |
 |---|---|---|

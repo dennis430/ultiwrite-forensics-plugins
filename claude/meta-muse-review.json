@@ -1,6 +1,6 @@
 {
   "format": "ultiwrite-forensics-meta-muse-review-worksheet",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "purpose": "Product-owned proposed classifications for official Meta Muse review; not an official manifest or a host approval configuration.",
   "guidelines": "https://platform.muse.ai/docs",
   "product": "ultiwrite-forensics",

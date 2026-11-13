@@ -1,6 +1,6 @@
 # Ultiwrite Forensics in Meta Muse Code
 
-Connector 1.0.10 uses the documented native [Muse Code MCP configuration](https://dev.meta.ai/docs/muse-code/extending#mcp), separate from the consumer [Muse Connector Platform review](../META-MUSE-REVIEW.md).
+Connector 1.0.11 uses the documented native [Muse Code MCP configuration](https://dev.meta.ai/docs/muse-code/extending#mcp), separate from the consumer [Muse Connector Platform review](../META-MUSE-REVIEW.md).
 
 Merge [settings.json.example](settings.json.example) into `~/.config/muse/settings.json`, preserving your other configuration. The file must include `"schema_version": 1`; the official [configuration reference](https://dev.meta.ai/docs/muse-code/configuration.md) says a present file without it fails startup. Do not overwrite an existing settings file blindly.
 
