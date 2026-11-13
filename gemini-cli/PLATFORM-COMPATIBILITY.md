@@ -1,6 +1,6 @@
 # Platform compatibility and submission tailoring
 
-Release 1.0.11 carries one product identity and remote OAuth endpoint. Host layouts are adapters around that contract, not independent backends. Use the applicable prepared layout and current official host documentation. `connection-profile.json` is a product-owned portable description for integration planning, not an official host manifest or a command to paste into every client.
+Release 1.0.12 carries one product identity and remote OAuth endpoint. Host layouts are adapters around that contract, not independent backends. Use the applicable prepared layout and current official host documentation. `connection-profile.json` is a product-owned portable description for integration planning, not an official host manifest or a command to paste into every client.
 
 | Platform | Use these artifacts | Installation/review focus | Evidence still required |
 |---|---|---|---|

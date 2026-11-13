@@ -38,7 +38,7 @@
   {
     "name": "ultiwrite_forensics_upload_link_create",
     "title": "Create a secure browser upload link",
-    "description": "Use when the user wants to examine a document but your client cannot send the file's contents. Returns a signed ultiwrite.co upload link, valid for 60 minutes, that works only for the connected account. Give the user the exact uploadUrl, keep the returned handoffId, and after the user uploads call ultiwrite_forensics_analysis_status with that handoffId. externalChecks is off by default; set it only with explicit user opt-in to selected business-field registry comparisons. The signed link fixes this choice. Creating the link does not use an analysis unit; the browser upload uses one.",
+    "description": "Use when the user wants to examine a document but your client cannot send the file's contents. Returns a signed ultiwrite.co upload link, valid for 60 minutes, that works only for the connected account. Give the user the exact uploadUrl, keep the returned handoffId, and after the user uploads call ultiwrite_forensics_analysis_status with that handoffId. Choose a decision profile/materiality to shape the saved interpretation and ranked follow-up without changing detector execution or accounting. externalChecks is off by default; set it only with explicit user opt-in. The signed link fixes these choices. Creating the link does not use an analysis unit; the browser upload uses one.",
     "scope": "forensics:analyze",
     "inputSchema": {
       "type": "object",
@@ -48,6 +48,27 @@
           "type": "boolean",
           "default": false,
           "description": "Only when the user opts in: compare selected document business fields with GLEIF and IRS TEOS. Sends selected business fields, never the original document, to public registries. Separate evidence, not authenticity verification."
+        },
+        "documentProfile": {
+          "type": "string",
+          "enum": [
+            "general",
+            "invoice-ap",
+            "contract-diligence",
+            "pre-sharing"
+          ],
+          "default": "general",
+          "description": "Decision context for interpreting the same frozen document evidence. invoice-ap, contract-diligence, and pre-sharing change questions, consequences, and evidence requests; they do not run a wider business investigation."
+        },
+        "materiality": {
+          "type": "string",
+          "enum": [
+            "routine",
+            "material",
+            "critical"
+          ],
+          "default": "routine",
+          "description": "Consequence context for prioritizing follow-up. This does not change detector execution or create a binding decision."
         }
       },
       "required": []
@@ -62,7 +83,7 @@
   {
     "name": "ultiwrite_forensics_analysis_start",
     "title": "Start a document examination",
-    "description": "Use when the user asks to examine an authorized document for alteration, tampering, editing history or metadata. Submits exactly one original (PDF, Office, RTF, image or one ZIP of those, up to 48 MiB using the browser upload link or app download URL, and up to 3 MiB inline) and uses one analysis unit when a usable report is produced; failed examinations release the unit. Send file {name, contentBase64} with the original bytes when you can read the file, or files with one file object supplied by your connected app. Never pass a local path or invent a URL. Repeating the same original on this connection returns the existing examination instead of charging again; pass a new requestKey only when the user asks for a fresh examination. externalChecks is off by default; set it only with explicit user opt-in to selected business-field comparisons via GLEIF and IRS TEOS. If you cannot send bytes, use ultiwrite_forensics_upload_link_create.",
+    "description": "Use when the user asks to examine an authorized document for alteration, editing history, metadata, invoice/AP reliance, contract/diligence, or pre-sharing assurance. Submits exactly one original and optionally one earlier PDF reference for a PDF original. The pair remains one examination and uses one analysis unit when a usable report is produced; failed examinations release it. Send file/files for the original and referenceFile/referenceFiles for the optional earlier PDF. Never pass a local path or invent a URL. Choose documentProfile and materiality to change the question, consequence wording, and ranked next evidence over the same frozen engine evidence; this does not run broader business investigation. Repeating the exact same inputs returns the existing examination. externalChecks is off by default and requires explicit opt-in. If you cannot send bytes, use ultiwrite_forensics_upload_link_create.",
     "scope": "forensics:analyze",
     "inputSchema": {
       "type": "object",
@@ -117,24 +138,93 @@
           },
           "description": "One file object supplied by your connected app (for example a ChatGPT attachment). Pass [] when file is used."
         },
+        "referenceFile": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "contentBase64": {
+              "type": "string",
+              "description": "An earlier PDF's exact bytes, base64-encoded."
+            }
+          },
+          "required": [
+            "name",
+            "contentBase64"
+          ],
+          "description": "Optional earlier PDF for the admitted reference comparison. Pass null when omitted or referenceFiles is used."
+        },
+        "referenceFiles": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download_url": {
+                "type": "string"
+              },
+              "file_id": {
+                "type": "string"
+              },
+              "mime_type": {
+                "type": "string"
+              },
+              "file_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "download_url",
+              "file_id"
+            ]
+          },
+          "description": "Optional one earlier PDF supplied by the connected app. Pass [] when omitted or referenceFile is used."
+        },
         "externalChecks": {
           "type": "boolean",
           "default": false,
           "description": "Only when the user opts in: compare selected document business fields with GLEIF and IRS TEOS. Sends selected business fields, never the original document, to public registries. Separate evidence, not authenticity verification."
+        },
+        "documentProfile": {
+          "type": "string",
+          "enum": [
+            "general",
+            "invoice-ap",
+            "contract-diligence",
+            "pre-sharing"
+          ],
+          "default": "general",
+          "description": "Decision context for interpreting the same frozen document evidence. invoice-ap, contract-diligence, and pre-sharing change questions, consequences, and evidence requests; they do not run a wider business investigation."
+        },
+        "materiality": {
+          "type": "string",
+          "enum": [
+            "routine",
+            "material",
+            "critical"
+          ],
+          "default": "routine",
+          "description": "Consequence context for prioritizing follow-up. This does not change detector execution or create a binding decision."
         },
         "requestKey": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Optional idempotency key (UUID). Omit or pass null to reuse an earlier examination of the same original on this connection.",
+          "description": "Optional idempotency key (UUID). Reuse it only with the same original, optional reference, profile, materiality, and external-check choice. Omit or pass null for a deterministic key over those exact inputs.",
           "format": "uuid"
         }
       },
       "required": [
         "file",
-        "files",
-        "requestKey"
+        "files"
       ]
     },
     "annotations": {
@@ -147,7 +237,7 @@
   {
     "name": "ultiwrite_forensics_analyses_list",
     "title": "List examinations",
-    "description": "Use to find the connected account's recent examinations, including ones started on the website or API. Returns ids, states and creation times, newest first. Read-only.",
+    "description": "Use to find the connected account's examinations, including ones started on the website or API. Returns ids, states and creation times in creation-time/ID descending order. Pass nextCursor as cursor until hasMore is false to retrieve the complete history. Read-only.",
     "scope": "forensics:read",
     "inputSchema": {
       "type": "object",
@@ -161,6 +251,15 @@
           "minimum": 1,
           "maximum": 50,
           "description": "1–50; null for 20."
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 512,
+          "description": "Opaque nextCursor from the previous page. Omit or null for the first page."
         }
       },
       "required": [
