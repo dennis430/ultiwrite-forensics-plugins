@@ -76,6 +76,8 @@ export async function validatePublic(directory) {
   const [major, minor, patch] = identity.version.split('.').map(Number);
   const requiresProfile = major > 1 || (major === 1 && (minor > 0 || (minor === 0 && patch >= 9)));
   const profile = requiresProfile ? await json('connection-profile.json') : null;
+  const requiresMeta = major > 1 || (major === 1 && (minor > 0 || (minor === 0 && patch >= 10)));
+  let museSettings = null, metaReview = null;
   if (profile) {
   assert.equal(profile.format, 'ultiwrite-forensics-connection-profile');
   assert.equal(profile.product, identity.slug);
@@ -88,6 +90,23 @@ export async function validatePublic(directory) {
   assert.equal(profile.acceptance, 'prepared_not_native_host_verified');
   for (const name of ['ENTERPRISE.md', 'OPERATIONS.md', 'REVIEWER-GUIDE.md', 'PLATFORM-COMPATIBILITY.md'])
     assert.ok((await readFile(join(root, name), 'utf8')).includes(identity.version), `Enterprise review documentation is release-specific: ${name}`);
+  }
+  if (requiresMeta) {
+    museSettings = await json('muse-code/settings.json.example');
+    assert.equal(museSettings.schema_version, 1, 'Muse Code requires explicit settings schema_version');
+    assert.deepEqual(Object.keys(museSettings.mcp_servers), [identity.slug]);
+    assert.equal(museSettings.mcp_servers[identity.slug].url, identity.mcpUrl, 'Muse Code endpoint must preserve product isolation');
+    assert.deepEqual(museSettings.mcp_servers[identity.slug], { transport: 'streamable_http', url: identity.mcpUrl, enabled: true, mode: 'optional' }, 'Muse Code uses documented native HTTP settings without credentials');
+    metaReview = await json('meta-muse-review.json');
+    assert.equal(metaReview.product, identity.slug);
+    assert.equal(metaReview.version, identity.version);
+    assert.equal(metaReview.endpoint, identity.mcpUrl);
+    assert.equal(metaReview.guidelines, 'https://platform.muse.ai/docs');
+    assert.deepEqual(metaReview.readOnlyOAuthScopes, ['forensics:read']);
+    assert.equal(metaReview.nativeHostTested, false);
+    assert.equal(metaReview.reviewStatus, 'prepared_not_submitted');
+    assert.deepEqual(metaReview.tools, tools.map(({ name, scope, annotations }) => ({ name, scope, proposedClassification: annotations.readOnlyHint ? 'read' : 'sensitive_write', approval: annotations.readOnlyHint ? 'host_first_use_then_per_use_unless_user_selects_always_allow' : 'every_use_allow_once_or_deny_no_always_allow', annotations })), 'Meta proposed tool privileges and sensitive-write approvals must match the registry');
+    assert.ok((await readFile(join(root, 'META-MUSE-REVIEW.md'), 'utf8')).includes(identity.version));
   }
   const packages = await json('release/manifest.json');
   const validation = await json('release/validation.json');
@@ -116,6 +135,12 @@ export async function validatePublic(directory) {
         assert.deepEqual(archivedProfile, profile, `Portable profile must agree across ${target} and repository`);
         const archivedTools = JSON.parse(execFileSync('unzip', ['-p', path, 'tools.json'], { encoding: 'utf8' }));
         assert.deepEqual(archivedTools, tools, `Real tool catalog must agree across ${target} and repository`);
+      }
+      if (requiresMeta) {
+        const archivedSettings = JSON.parse(execFileSync('unzip', ['-p', path, 'muse-code/settings.json.example'], { encoding: 'utf8' }));
+        assert.deepEqual(archivedSettings, museSettings, `Muse Code settings must agree across ${target} and repository`);
+        const archivedReview = JSON.parse(execFileSync('unzip', ['-p', path, 'meta-muse-review.json'], { encoding: 'utf8' }));
+        assert.deepEqual(archivedReview, metaReview, `Meta review worksheet must agree across ${target} and repository`);
       }
     }
     assert.ok(members.every((p) => !p.startsWith('/') && !p.split('/').includes('..')), 'Unsafe archive paths');

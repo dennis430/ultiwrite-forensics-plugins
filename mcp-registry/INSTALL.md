@@ -21,6 +21,8 @@ Cursor reads the root `mcp.json`; Codex can use `config.toml.example` and `codex
 
 Other host files are in `chatgpt/`, `codex/`, `claude/`, `cursor/`, `gemini-cli/`, `antigravity/`, `microsoft-365/` and `mcp-registry/`, `openai-portal/` and `grok-build/`. `release/manifest.json` indexes validated ZIPs. The combined ZIP is an offline handoff, not a host-specific submission format. Microsoft requires its portal OAuth reference. Publishing `server.json` to the MCP Registry requires proving ownership of ultiwrite.co and a separate publication instruction.
 
+Meta Muse Code uses [muse-code/settings.json.example](muse-code/settings.json.example) merged into `~/.config/muse/settings.json` with `schema_version: 1`, then `muse mcp login ultiwrite-forensics` and `/mcp` to inspect the inventory. Its `streamable_http` client configuration is separate from the [Meta Muse Connector Platform submission packet](META-MUSE-REVIEW.md). The consumer platform requires read-only OAuth choice, per-use approval for sensitive writes, current privacy/business intake, protected reviewer credentials and genuine QA; an installed coding-client connection does not establish directory acceptance.
+
 ## Account and workflow
 
 Use `ultiwrite_forensics_account_get` and `ultiwrite_forensics_capabilities_get`, submit an authorized original with `ultiwrite_forensics_analysis_start` or its signed browser handoff, poll `ultiwrite_forensics_analysis_status`, then read findings and retrieve both PDFs (`pdf` and `metadata_analytics`), the structured export (`result`) and artifact manifest (`manifest`). Examinations spend standalone analysis units. Polling and downloads are free. Flagship Ultiwrite subscriptions and OAuth tokens do not confer access.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ultiwrite-forensics",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -78,7 +78,7 @@
         }
       },
       "publication": {
-        "release_notes": "Ultiwrite Forensics 1.0.9: enterprise onboarding and operations guides, platform-specific submission readiness, portable connection profiles and a repeatable reviewer journey; retains original-byte intake, recovery and artifact workflows."
+        "release_notes": "Ultiwrite Forensics 1.0.10: official Meta Muse review packet, native Muse Code settings and authentication guidance, plus enterprise operations and platform readiness; retains original-byte intake, recovery and artifact workflows."
       }
     }
   }

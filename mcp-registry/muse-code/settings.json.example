@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "mcp_servers": {
+    "ultiwrite-forensics": {
+      "transport": "streamable_http",
+      "url": "https://mcp.ultiwrite.co/mcp",
+      "enabled": true,
+      "mode": "optional"
+    }
+  }
+}
