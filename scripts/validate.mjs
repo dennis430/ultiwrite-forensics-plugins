@@ -71,6 +71,24 @@ export async function validatePublic(directory) {
     assert.ok(tool.name.startsWith(identity.toolPrefix)); assert.ok(identity.oauth.scopes.includes(tool.scope));
     assert.equal(tool.run, undefined, 'Public catalog must contain descriptors only');
   }
+  // The publisher uses this validator on the previous public release before updating it.
+  // Enterprise profiles became mandatory in 1.0.9; preserve validation of immutable older trees.
+  const [major, minor, patch] = identity.version.split('.').map(Number);
+  const requiresProfile = major > 1 || (major === 1 && (minor > 0 || (minor === 0 && patch >= 9)));
+  const profile = requiresProfile ? await json('connection-profile.json') : null;
+  if (profile) {
+  assert.equal(profile.format, 'ultiwrite-forensics-connection-profile');
+  assert.equal(profile.product, identity.slug);
+  assert.equal(profile.version, identity.version);
+  assert.equal(profile.endpoint, identity.mcpUrl, 'Portable profile endpoint must be isolated');
+  assert.equal(profile.transport, 'streamable-http');
+  assert.deepEqual(profile.authentication, { type: 'oauth', dynamicClientRegistration: true, pkce: 'S256', ...identity.oauth }, 'Portable profile cannot widen privileges or embed credentials');
+  assert.equal(profile.api.baseUrl, identity.apiBaseUrl);
+  assert.deepEqual(profile.tools, tools.map(({ name, scope, annotations }) => ({ name, scope, annotations })), 'Portable profile tool privileges must match the runtime catalog');
+  assert.equal(profile.acceptance, 'prepared_not_native_host_verified');
+  for (const name of ['ENTERPRISE.md', 'OPERATIONS.md', 'REVIEWER-GUIDE.md', 'PLATFORM-COMPATIBILITY.md'])
+    assert.ok((await readFile(join(root, name), 'utf8')).includes(identity.version), `Enterprise review documentation is release-specific: ${name}`);
+  }
   const packages = await json('release/manifest.json');
   const validation = await json('release/validation.json');
   assert.equal(packages.version, identity.version);
@@ -92,6 +110,12 @@ export async function validatePublic(directory) {
       for (const member of archiveFiles) {
         const content = execFileSync('unzip', ['-p', path, member], { maxBuffer: 50_000_000 });
         assert.equal(sha(await readFile(join(root, exported, member))), sha(content), `Export content differs from validated ZIP: ${exported}/${member}`);
+      }
+      if (profile) {
+        const archivedProfile = JSON.parse(execFileSync('unzip', ['-p', path, 'connection-profile.json'], { encoding: 'utf8' }));
+        assert.deepEqual(archivedProfile, profile, `Portable profile must agree across ${target} and repository`);
+        const archivedTools = JSON.parse(execFileSync('unzip', ['-p', path, 'tools.json'], { encoding: 'utf8' }));
+        assert.deepEqual(archivedTools, tools, `Real tool catalog must agree across ${target} and repository`);
       }
     }
     assert.ok(members.every((p) => !p.startsWith('/') && !p.split('/').includes('..')), 'Unsafe archive paths');

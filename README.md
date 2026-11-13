@@ -2,7 +2,7 @@
 
 The public connector repository for **Ultiwrite Forensics**, the document-forensics and metadata product at [ultiwrite.co](https://ultiwrite.co).
 
-**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.8
+**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.9
 
 Connect with OAuth using your own Ultiwrite Forensics account. Connecting grants no analysis units; examinations use this product's balance. The separate Ultiwrite business-diligence product and its registrations remain independent.
 
@@ -16,9 +16,14 @@ Connect with OAuth using your own Ultiwrite Forensics account. Connecting grants
 | Gemini CLI | `gemini extensions install https://github.com/dennis430/ultiwrite-forensics-plugins`, then `/mcp auth ultiwrite-forensics` |
 | VS Code / GitHub Copilot | [Setup guide](guides/vscode-github-copilot.md) |
 | Grok Build | [Native package and separate pinned catalog contribution](grok-build/) |
+| EmDash | [Custom HTTP MCP and per-agent setup](guides/emdash.md) |
+| Google Antigravity | [Prepared native layout](antigravity/) |
+| Grok Bot / Meta Muse | [Platform readiness and prepared integration packets](PLATFORM-COMPATIBILITY.md) |
 | Other clients | [Installation guide](INSTALL.md) and [MCP documentation](https://ultiwrite.co/docs/mcp) |
 
 The Claude marketplace and root Cursor/Codex/Gemini manifests are installable repository layouts. The [release folder](release/) contains per-platform packages, a separate OpenAI portal overlay, a Grok Build contribution and an offline handoff bundle and SHA-256 checksums. Microsoft 365 requires a portal-issued OAuth reference before submission. A public GitHub repository is **not** evidence of marketplace listing, native-host acceptance or a new backend deployment. The connector version and the running server version can differ.
+
+For organization adoption, use [enterprise onboarding](ENTERPRISE.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), [operations and recovery](OPERATIONS.md), and the [synthetic reviewer journey](REVIEWER-GUIDE.md). Each host archive includes these guides and a product-owned [connection profile](connection-profile.json). It describes the shared protocol and permissions; it is not an invented native manifest for an unverified platform.
 
 ## What it does
 

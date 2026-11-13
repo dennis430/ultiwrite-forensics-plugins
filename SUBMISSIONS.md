@@ -1,6 +1,6 @@
 # Directory and publication status
 
-This public repository contains connector source layouts and prepared packages, version 1.0.8. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
+This public repository contains connector source layouts and prepared packages, version 1.0.9. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
 
 | Target | Public files | Remaining external step |
 |---|---|---|
@@ -14,6 +14,8 @@ This public repository contains connector source layouts and prepared packages, 
 | Official MCP Registry | Root `server.json` and `mcp-registry/` | Prove ownership of ultiwrite.co, validate with mcp-publisher, and explicitly authorize publication |
 | Grok Bot / Cursor form | `guides/grok.md` | Separate shared review route; actual native tests required before tested assertion; Grok consumer is coming soon |
 | Grok Build | `grok-build/` native package and pinned catalog contribution | Current contribution pins existing public 1.0.4; regenerate after approved public update; ownership proof and native/full-catalog checks remain |
+| EmDash | `guides/emdash.md`, portable connection profile, reviewer journey | Configure the current custom HTTP MCP interface and intended agent sync; prove OAuth and complete examination in the installed client |
+| Meta / Muse | `guides/meta-muse.md`, portable connection profile, enterprise/reviewer packet | Exact official product/program, supported transport/auth and package schema must be established before claiming a native package |
 | Dash / Chester | None | NEEDS_PLATFORM_IDENTITY: Dennis supplies exact official product URL before package work |
 | VS Code / GitHub Copilot, Mistral | `guides/` | Manual connection; directory availability depends on the host |
 | ReadMe / Mintlify | `guides/readme.md`, `guides/mintlify.md` | Separate documentation-project access; no invented plugin upload format |
@@ -24,3 +26,5 @@ The preferred npm identifier `@ultiwrite/forensics-mcp` remains ownership-unveri
 The Microsoft reference is maintained once in private canonical identity at `packages.microsoftDcrReferenceId`; regenerate all packages after the portal issues it. Do not hand-edit generated identities. No permanent document retention: Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.
 
 For current setup and policies: https://ultiwrite.co/docs/mcp · https://ultiwrite.co/privacy · https://ultiwrite.co/data-retention.
+
+Every host archive contains enterprise onboarding, operations/recovery, platform compatibility and the synthetic reviewer plan. These provide a practical review packet; they do not manufacture reviewer credentials, ownership proof, unsupported host formats or native test results. Use `connection-profile.json` and `tools.json` to reconcile the endpoint, OAuth scopes and real tool names before submission. Keep protected credentials out of these artifacts.

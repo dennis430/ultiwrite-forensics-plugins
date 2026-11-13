@@ -1,7 +1,7 @@
 {
   "name": "Ultiwrite Forensics",
   "slug": "ultiwrite-forensics",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "shortDescription": "Document forensics. Metadata analysis. No permanent document retention.",
   "description": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports.",
   "positioning": "Document Forensics & Metadata Intelligence",

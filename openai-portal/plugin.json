@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ultiwrite-forensics",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Document forensics. Metadata analysis. No permanent document retention.",
   "author": {
     "name": "DWS Offshore Fund",
@@ -78,7 +78,7 @@
         }
       },
       "publication": {
-        "release_notes": "Ultiwrite Forensics 1.0.8: assistant connection icons, light/dark plugin branding, and clearer review boundaries; retains the 1.0.7 recovery and artifact workflows."
+        "release_notes": "Ultiwrite Forensics 1.0.9: enterprise onboarding and operations guides, platform-specific submission readiness, portable connection profiles and a repeatable reviewer journey; retains original-byte intake, recovery and artifact workflows."
       }
     }
   }

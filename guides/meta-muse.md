@@ -1,5 +1,9 @@
 # Meta / Muse distribution
 
-No verified Meta/Muse program or seller/package prerequisites have been established for Ultiwrite Forensics. This is an inventory row, not an implemented integration or partner-intake claim. Dennis must identify the official intended product/program before authoring a package or claiming support. No upload, seller enrollment or submission is authorized here.
+The exact official Meta/Muse product, partner program and native package contract have not been established for Ultiwrite Forensics. This guide is a prepared integration intake packet, not a native manifest or an acceptance claim.
+
+Use connection-profile.json for the product-owned transport/authentication contract, tools.json for the public tool catalog, ENTERPRISE.md for identity/data handling, and REVIEWER-GUIDE.md for synthetic acceptance tests. Product: **Ultiwrite Forensics**. Endpoint: `https://mcp.ultiwrite.co/mcp`. Authentication: OAuth with dynamic client registration and PKCE S256. Resource: `https://mcp.ultiwrite.co/mcp`. Scopes: forensics:read, forensics:analyze, forensics:delete. Privacy: https://ultiwrite.co/privacy. Terms: https://ultiwrite.co/terms. Support: https://ultiwrite.co/support. Icon: https://ultiwrite.co/branding/ultiwrite-logo.png.
+
+Before adapting a package, establish the exact official product URL, publisher eligibility, supported transport, OAuth client/redirect requirements, package schema, supported file transport and reviewer process. Preserve first-party consent, source-byte integrity, workspace isolation and the temporary-processing policy. Run the real native journey before any tested assertion. No official seller enrollment, upload or submission is claimed.
 
 No permanent document retention: Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.
