@@ -47,6 +47,25 @@ test('rehashing a portable profile cannot substitute another product endpoint or
   await revise(root, path, JSON.stringify(changedScopes));
   await assert.rejects(validatePublic(root), /Portable profile cannot widen/);
 }));
+test('rehashing native Muse Code settings cannot omit the schema or route to another product', () => fixture(async (root) => {
+  const path = 'muse-code/settings.json.example';
+  const original = JSON.parse(await readFile(join(root, path), 'utf8'));
+  const noSchema = structuredClone(original); delete noSchema.schema_version;
+  await revise(root, path, JSON.stringify(noSchema));
+  await assert.rejects(validatePublic(root), /Muse Code requires explicit/);
+  const otherProduct = structuredClone(original);
+  otherProduct.mcp_servers['ultiwrite-forensics'].url = 'https://mcp.dwsoffshorepartners.com/mcp';
+  await revise(root, path, JSON.stringify(otherProduct));
+  await assert.rejects(validatePublic(root), /Muse Code endpoint/);
+}));
+test('rehashing Meta review classifications cannot grant saved approval for consequential writes', () => fixture(async (root) => {
+  const path = 'meta-muse-review.json';
+  const doc = JSON.parse(await readFile(join(root, path), 'utf8'));
+  const deletion = doc.tools.find((tool) => tool.name === 'ultiwrite_forensics_analysis_delete');
+  deletion.proposedClassification = 'read'; deletion.approval = 'always_allow';
+  await revise(root, path, JSON.stringify(doc));
+  await assert.rejects(validatePublic(root), /Meta proposed tool privileges/);
+}));
 test('rehashing changed host documentation still requires exact validated archive content', () => fixture(async (root) => {
   await revise(root, 'chatgpt/README.md', '# changed after package validation');
   await assert.rejects(validatePublic(root), /Export content differs from validated ZIP/);

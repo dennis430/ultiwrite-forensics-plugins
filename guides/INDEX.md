@@ -1,19 +1,19 @@
-# Ultiwrite Forensics distribution index 1.0.9
+# Ultiwrite Forensics distribution index 1.0.10
 
 One command: `npm run distribution:build`. Checksums: SHA256SUMS. Validation: `npm run distribution:validate`. Nothing here is submitted or listed.
 
 | Package | Path | SHA-256 |
 | --- | --- | --- |
-| openai | /downloads/ultiwrite-forensics/ultiwrite-forensics-openai-1.0.9.zip | 9e5cd39330f2ce337e0a890fa894f467236b48b95a49f5231aeaaa94ca137615 |
-| openai-portal | /downloads/ultiwrite-forensics/ultiwrite-forensics-openai-portal-1.0.9.zip | 260bdfcd023601ae9aea0ac0ee6d8753899eadfd69c8e277e866d0deadbcf2b9 |
-| codex | /downloads/ultiwrite-forensics/ultiwrite-forensics-codex-1.0.9.zip | 787a5e6add987b51ebf7d088c0f73a956e2d61ae372a7ba617f4464dcc308930 |
-| claude | /downloads/ultiwrite-forensics/ultiwrite-forensics-claude-1.0.9.zip | b050d1459e2583a74904c6fb9ddf757a66c9eed10b1f1c11735eae872230881c |
-| cursor | /downloads/ultiwrite-forensics/ultiwrite-forensics-cursor-1.0.9.zip | e49eb45018ecb17020fcbc006ed4414ceca65ac7f3e1b7598782d2c25d1fd667 |
-| grok-build | /downloads/ultiwrite-forensics/ultiwrite-forensics-grok-build-1.0.9.zip | 011239aeadba5e76ced602f418f17fb55deb4eb27ab590bae24103871eb5957a |
-| mcp-registry | /downloads/ultiwrite-forensics/ultiwrite-forensics-mcp-registry-1.0.9.zip | 034e9554abcb49c321cbde87e198a644843268374d4b9f61ea73369ff6a03d69 |
-| antigravity | /downloads/ultiwrite-forensics/ultiwrite-forensics-antigravity-1.0.9.zip | efa9845407dce686364f0103a38269e37a2ea569d2a16418bf474f8d2d5c9c28 |
-| gemini-cli | /downloads/ultiwrite-forensics/ultiwrite-forensics-gemini-cli-1.0.9.zip | 5e705a27829625ee907154149dcf7daafa027b24da75a8cd4abd1620ffa06a95 |
-| microsoft-365 | /downloads/ultiwrite-forensics/ultiwrite-forensics-microsoft-365-1.0.9.zip | 1166c7e5f763c0130213d6b4c8e3bce89a35a220440784c9bf78d1c039d60de3 |
-| plugin-bundle | /downloads/ultiwrite-forensics/ultiwrite-forensics-plugin-bundle-1.0.9.zip | 4beaacdc850b65c770554dcd6e23212f87a273ce795ec8ec4845dd58efd2a54a |
+| openai | /downloads/ultiwrite-forensics/ultiwrite-forensics-openai-1.0.10.zip | fea71d57c8452c0e3987e95e8d3f3a8d96f088cb590d0df6582aff832a362bdb |
+| openai-portal | /downloads/ultiwrite-forensics/ultiwrite-forensics-openai-portal-1.0.10.zip | 76db1ad55cc23ceb4c20d223788ba9a0f2e1a7fac152bc0b7f2b9261c532c821 |
+| codex | /downloads/ultiwrite-forensics/ultiwrite-forensics-codex-1.0.10.zip | 157a8b118c86a79feecfd54067ce927d7a9b792195f0fe27585289e642b2d6c1 |
+| claude | /downloads/ultiwrite-forensics/ultiwrite-forensics-claude-1.0.10.zip | e8c830e958f91e2a6c5341425c01270246f0e891363b0acda69c0327134d3fa1 |
+| cursor | /downloads/ultiwrite-forensics/ultiwrite-forensics-cursor-1.0.10.zip | 08006611a2e9515a917b9f0e08a39cefa62515f029cc78e9e85345da0fa64126 |
+| grok-build | /downloads/ultiwrite-forensics/ultiwrite-forensics-grok-build-1.0.10.zip | 0e29587e5bce98279045d93108e6a410ac8d433abaa5625c9fc899b64fe29edd |
+| mcp-registry | /downloads/ultiwrite-forensics/ultiwrite-forensics-mcp-registry-1.0.10.zip | 75655306e26f5dc793df66970804e7e13ded72204ebed13751b765a5dc6e3b30 |
+| antigravity | /downloads/ultiwrite-forensics/ultiwrite-forensics-antigravity-1.0.10.zip | 7de5555925d1ea64e7ced976da8f4a9ec910074f82385646d015050165f6f54d |
+| gemini-cli | /downloads/ultiwrite-forensics/ultiwrite-forensics-gemini-cli-1.0.10.zip | 745a2d4add87d9be6cdd0bda64c6ef2e7e710e36b77f251c66caa017af9680d0 |
+| microsoft-365 | /downloads/ultiwrite-forensics/ultiwrite-forensics-microsoft-365-1.0.10.zip | b88def9373f7338ae89d4780800f9b0460699d4b842d936e41a182369572a43d |
+| plugin-bundle | /downloads/ultiwrite-forensics/ultiwrite-forensics-plugin-bundle-1.0.10.zip | 1d8723f7b513e6809085a581e8ef2c2fa83ab0248d44cb0451d006e1ef11120d |
 
 ChatGPT review cases are inside the OpenAI ZIP (five positive, three negative). The Claude dossier is CLAUDE-DOSSIER.md inside the Claude ZIP. Cursor installs from mcp.json. Grok instructions are grok.md. The registry entry is server.json inside the mcp-registry ZIP.

@@ -1,6 +1,6 @@
 # Ultiwrite Forensics enterprise integration
 
-This guide covers connector release 1.0.9 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
+This guide covers connector release 1.0.10 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
 
 ## Choose the integration boundary
 

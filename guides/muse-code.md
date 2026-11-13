@@ -1,0 +1,5 @@
+# Meta Muse Code
+
+Merge the prepared muse-code/settings.json.example from https://github.com/dennis430/ultiwrite-forensics-plugins into ~/.config/muse/settings.json. Preserve schema_version: 1. The native server uses transport streamable_http, url https://mcp.ultiwrite.co/mcp, enabled true and mode optional. Run muse mcp login ultiwrite-forensics, then inspect /mcp; disconnect with muse mcp logout ultiwrite-forensics. Dynamic client registration is documented as enabled by default. See https://dev.meta.ai/docs/muse-code/extending#mcp and https://dev.meta.ai/docs/muse-code/configuration.md. This is prepared client configuration, not native-host proof or consumer directory approval.
+
+No permanent document retention: Your files are processed temporarily for your forensic analysis and automatically deleted. Originals are kept for at most one hour and reports for up to 24 hours. We keep no permanent archive of customer documents or reports; account and billing records are separate. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted.

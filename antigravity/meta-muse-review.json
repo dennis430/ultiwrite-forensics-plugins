@@ -1,0 +1,136 @@
+{
+  "format": "ultiwrite-forensics-meta-muse-review-worksheet",
+  "version": "1.0.10",
+  "purpose": "Product-owned proposed classifications for official Meta Muse review; not an official manifest or a host approval configuration.",
+  "guidelines": "https://platform.muse.ai/docs",
+  "product": "ultiwrite-forensics",
+  "endpoint": "https://mcp.ultiwrite.co/mcp",
+  "readOnlyOAuthScopes": [
+    "forensics:read"
+  ],
+  "callbacks": "exact_environment_specific_portal_values_required_not_supplied_here",
+  "reviewStatus": "prepared_not_submitted",
+  "nativeHostTested": false,
+  "tools": [
+    {
+      "name": "ultiwrite_forensics_account_get",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_capabilities_get",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_upload_link_create",
+      "scope": "forensics:analyze",
+      "proposedClassification": "sensitive_write",
+      "approval": "every_use_allow_once_or_deny_no_always_allow",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_start",
+      "scope": "forensics:analyze",
+      "proposedClassification": "sensitive_write",
+      "approval": "every_use_allow_once_or_deny_no_always_allow",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analyses_list",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_status",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_findings_get",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_report_get",
+      "scope": "forensics:read",
+      "proposedClassification": "read",
+      "approval": "host_first_use_then_per_use_unless_user_selects_always_allow",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_evidence_unlock",
+      "scope": "forensics:analyze",
+      "proposedClassification": "sensitive_write",
+      "approval": "every_use_allow_once_or_deny_no_always_allow",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ultiwrite_forensics_analysis_delete",
+      "scope": "forensics:delete",
+      "proposedClassification": "sensitive_write",
+      "approval": "every_use_allow_once_or_deny_no_always_allow",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Directory and publication status
 
-This public repository contains connector source layouts and prepared packages, version 1.0.9. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
+This public repository contains connector source layouts and prepared packages, version 1.0.10. Publishing files to GitHub does not publish a directory listing or prove native-host acceptance.
 
 | Target | Public files | Remaining external step |
 |---|---|---|
@@ -15,7 +15,8 @@ This public repository contains connector source layouts and prepared packages, 
 | Grok Bot / Cursor form | `guides/grok.md` | Separate shared review route; actual native tests required before tested assertion; Grok consumer is coming soon |
 | Grok Build | `grok-build/` native package and pinned catalog contribution | Current contribution pins existing public 1.0.4; regenerate after approved public update; ownership proof and native/full-catalog checks remain |
 | EmDash | `guides/emdash.md`, portable connection profile, reviewer journey | Configure the current custom HTTP MCP interface and intended agent sync; prove OAuth and complete examination in the installed client |
-| Meta / Muse | `guides/meta-muse.md`, portable connection profile, enterprise/reviewer packet | Exact official product/program, supported transport/auth and package schema must be established before claiming a native package |
+| Meta Muse Connector Platform | `META-MUSE-REVIEW.md`, `meta-muse-review.json`, `guides/meta-muse.md` | Official platform/requirements verified; complete business/privacy intake, exact OAuth portal registration, protected reviewer account, read-only scope choice and genuine per-use sensitive-write/native QA before review |
+| Meta Muse Code | `muse-code/settings.json.example`, `muse-code/README.md` | Native settings prepared; use muse mcp login/logout and /mcp, then record actual native journey; consumer directory is separate |
 | Dash / Chester | None | NEEDS_PLATFORM_IDENTITY: Dennis supplies exact official product URL before package work |
 | VS Code / GitHub Copilot, Mistral | `guides/` | Manual connection; directory availability depends on the host |
 | ReadMe / Mintlify | `guides/readme.md`, `guides/mintlify.md` | Separate documentation-project access; no invented plugin upload format |

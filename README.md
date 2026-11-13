@@ -2,7 +2,7 @@
 
 The public connector repository for **Ultiwrite Forensics**, the document-forensics and metadata product at [ultiwrite.co](https://ultiwrite.co).
 
-**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.9
+**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.10
 
 Connect with OAuth using your own Ultiwrite Forensics account. Connecting grants no analysis units; examinations use this product's balance. The separate Ultiwrite business-diligence product and its registrations remain independent.
 
@@ -18,7 +18,8 @@ Connect with OAuth using your own Ultiwrite Forensics account. Connecting grants
 | Grok Build | [Native package and separate pinned catalog contribution](grok-build/) |
 | EmDash | [Custom HTTP MCP and per-agent setup](guides/emdash.md) |
 | Google Antigravity | [Prepared native layout](antigravity/) |
-| Grok Bot / Meta Muse | [Platform readiness and prepared integration packets](PLATFORM-COMPATIBILITY.md) |
+| Meta Muse | [Official connector review packet](META-MUSE-REVIEW.md) and [native Muse Code settings](muse-code/) |
+| Grok Bot | [Platform readiness and prepared integration packet](PLATFORM-COMPATIBILITY.md) |
 | Other clients | [Installation guide](INSTALL.md) and [MCP documentation](https://ultiwrite.co/docs/mcp) |
 
 The Claude marketplace and root Cursor/Codex/Gemini manifests are installable repository layouts. The [release folder](release/) contains per-platform packages, a separate OpenAI portal overlay, a Grok Build contribution and an offline handoff bundle and SHA-256 checksums. Microsoft 365 requires a portal-issued OAuth reference before submission. A public GitHub repository is **not** evidence of marketplace listing, native-host acceptance or a new backend deployment. The connector version and the running server version can differ.
