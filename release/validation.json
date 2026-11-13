@@ -1,8 +1,8 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.10",
-  "manifestSha256": "65361d8a82ce76d0de38c90954d17e0f4377730746b62e0d6548608f0b5ac31c",
-  "validatedAt": "2026-11-13T17:11:19.140Z",
+  "version": "1.0.11",
+  "manifestSha256": "060db3e1bc8060c9fc875734bef29f1b1c6ee6354395026b8c2513d85ee0ea8b",
+  "validatedAt": "2026-11-13T18:17:25.505Z",
   "results": {
     "openai": {
       "checks": {

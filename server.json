@@ -3,7 +3,7 @@
   "name": "co.ultiwrite/forensics",
   "title": "Ultiwrite Forensics",
   "description": "Document forensics and metadata analysis with temporary processing.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "repository": {
     "url": "https://github.com/dennis430/ultiwrite-forensics-plugins",
     "source": "github"
