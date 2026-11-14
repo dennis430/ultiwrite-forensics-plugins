@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
   "manifestVersion": "1.30",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "id": "6f0b8d7e-4d1a-4c55-9a0e-3b5f2f1c7a21",
   "developer": {
     "name": "DWS Offshore Fund",
@@ -15,7 +15,7 @@
   },
   "description": {
     "short": "Document forensics. Metadata analysis. No permanent document retention.",
-    "full": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted."
+    "full": "Examine an original PDF, Office file, RTF, image, or supported ZIP for construction, typography, layout, metadata and retained editing evidence. Decision profiles for invoice/AP, contract/diligence, and pre-sharing assurance turn the same source-bound evidence into a focused question, consequence, credible alternatives, and ranked next-evidence requests without starting a broader business investigation. Each completed examination returns source-bound findings, a Document Forensics Report PDF, a separate Metadata Analytics Report PDF, a structured export, and an artifact manifest. No permanent document retention: your files are processed temporarily and automatically deleted; there is no permanent archive of your documents or reports. Source files are deleted after processing, at the latest one hour after upload. Reports stay available for download for up to 24 hours, then they are deleted."
   },
   "icons": {
     "color": "color.png",

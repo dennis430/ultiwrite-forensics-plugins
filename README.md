@@ -2,7 +2,7 @@
 
 The public connector repository for **Ultiwrite Forensics**, the document-forensics and metadata product at [ultiwrite.co](https://ultiwrite.co).
 
-**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.11
+**MCP endpoint:** `https://mcp.ultiwrite.co/mcp` · **Connector package version:** 1.0.12
 
 Connect with OAuth using your own Ultiwrite Forensics account. Connecting grants no analysis units; examinations use this product's balance. The separate Ultiwrite business-diligence product and its registrations remain independent.
 
