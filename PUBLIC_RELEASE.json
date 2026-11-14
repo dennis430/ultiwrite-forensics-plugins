@@ -4,7 +4,7 @@
   "version": "1.0.12",
   "source": {
     "repository": "dennis430/ultiwrite-forensics",
-    "revision": "6fd56f4a162c685d2533a8f30ea5e974f4d4c96d"
+    "revision": "4d08e3db994da56111e9a2af38067917c30ea662"
   },
   "files": {
     ".claude-plugin/marketplace.json": "aa7513f8dedfae11e1bd57b9520c741c44c204e51542fa541aaadc3e4de97294",
