@@ -35,7 +35,7 @@ The documents you choose to submit, and requests for your own examinations. OAut
 
 ## Workflow
 
-connect → choose an authorized original → `ultiwrite_forensics_analysis_start` (or `ultiwrite_forensics_upload_link_create`) → `ultiwrite_forensics_analysis_status` → `ultiwrite_forensics_findings_get` → `ultiwrite_forensics_report_get`
+connect → choose an authorized original → `ultiwrite_forensics_analysis_start` (or `ultiwrite_forensics_upload_link_create`) → `ultiwrite_forensics_analysis_status` → `ultiwrite_forensics_findings_get` → `ultiwrite_forensics_evidence_unlock` (locked partial only, after explicit user authorization, with confirm:true; one unit) → `ultiwrite_forensics_report_get`
 
 Findings are evidence to assess, not an authenticity certificate or fraud verdict.
 

@@ -1,8 +1,8 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.13",
-  "manifestSha256": "2cf3a3ce6e484a20a2b00fbf5c6ade76bd6c798ba1e2918411c9ecdbd7584ff1",
-  "validatedAt": "2026-11-15T02:57:05.478Z",
+  "version": "1.0.14",
+  "manifestSha256": "7b58e933d6abd4d91ab4f8d81009011bd58d26ec66f53191f4471bcce60b1c8c",
+  "validatedAt": "2026-11-15T02:46:09.577Z",
   "results": {
     "openai": {
       "checks": {
@@ -84,7 +84,8 @@
     },
     "claude": {
       "checks": {
-        "archive available for native validator": "pass",
+        "claude plugin validate plugin": "pass",
+        "claude plugin validate marketplace": "pass",
         "archive hash, size and version": "pass",
         "canonical identity in actual ZIP": "pass",
         "canonical listing in actual ZIP": "pass",
@@ -270,9 +271,6 @@
   "externalDependencies": {
     "grok-build": [
       "Native Grok Build verification, Dennis's brand ownership proof for the personal-account repository, full-catalog CI and explicit upstream submission authorization remain required. Contribution currently pins the existing public package, not the new unpublished package."
-    ],
-    "claude": [
-      "Run `claude plugin validate` against both the plugin and marketplace directories in an environment with the current Claude CLI. This build environment has no `claude` executable; structural archive checks passed but are not native-host proof."
     ],
     "microsoft-365": [
       "Register the DCR configuration in the Teams Developer Portal and replace its referenceId before submission."
