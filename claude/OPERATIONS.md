@@ -1,6 +1,6 @@
 # Connector operations and customer recovery
 
-These procedures apply to Ultiwrite Forensics connector 1.0.11. They preserve the connected workspace boundary and the user's intended examination. Runtime documentation: https://ultiwrite.co/docs/mcp and https://ultiwrite.co/docs.
+These procedures apply to Ultiwrite Forensics connector 1.0.13. They preserve the connected workspace boundary and the user's intended examination. Runtime documentation: https://ultiwrite.co/docs/mcp and https://ultiwrite.co/docs.
 
 ## Before intake
 
@@ -31,13 +31,15 @@ Keep a local job record in your own system containing the host, product, workspa
 
 Manage customer API keys and MCP connections at https://ultiwrite.co/developers. API key rotation returns the replacement secret once; update the backend secret manager and verify a harmless scoped read before removing the previous secret from your infrastructure. Revocation should prevent the old credential from making another authorized call. A new key must have the correct scope, workspace, expiry and usage controls; rotating a credential does not grant units or broader roles.
 
+For unattended REST automation, an owner/admin may create an API-key-backed service principal in the same console. Record its business purpose and accountable primary/secondary owners. Rotation defaults to zero overlap; an explicit bounded grace period is a deliberate API-management choice. When an owner leaves, confirm that an eligible secondary owner was promoted or that the principal is revoked—never leave a credential without an active accountable owner. This credential is standalone-product REST authority only, not OAuth client credentials or MCP authorization.
+
 For MCP, revoke the product connection and remove the host configuration when decommissioning a client. If the host keeps a stale refresh token, reconnect through its normal sign-in flow rather than editing or exposing tokens. When a member leaves, use the supported workspace membership controls and revoke any independently created service credentials still under their responsibility.
 
 ## Outage and release handoff
 
 GitHub Actions or Vercel outages do not invalidate a source review, package hash or local check. They do prevent claims that hosted checks ran, a deployment completed or the new runtime was exercised in production. Keep source merge, package preparation, directory acceptance and deployment as separately evidenced states. After service recovery, verify the intended existing project/source revision, migrations and runtime configuration through the authorized deployment workflow, then repeat the synthetic journey against the deployed service.
 
-When escalating, provide product name, connector version 1.0.11, host/version, time with timezone, sanitized error code, saved request/analysis identifier, last known status and whether the failure was before or after acceptance. Use a protected channel if support later requests sensitive evidence. Never include secrets or customer files in GitHub issues or directory submissions.
+When escalating, provide product name, connector version 1.0.13, host/version, time with timezone, sanitized error code, saved request/analysis identifier, last known status and whether the failure was before or after acceptance. Use a protected channel if support later requests sensitive evidence. Never include secrets or customer files in GitHub issues or directory submissions.
 
 ## Service and customer retention boundaries
 

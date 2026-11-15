@@ -1,13 +1,13 @@
 # Ultiwrite Forensics enterprise integration
 
-This guide covers connector release 1.0.11 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
+This guide covers connector release 1.0.13 for the separate document-forensics product at https://ultiwrite.co. Start with [INSTALL.md](INSTALL.md), [platform compatibility](PLATFORM-COMPATIBILITY.md), and the [reviewer journey](REVIEWER-GUIDE.md). Hosted runtime availability and actual capabilities are discovered at connection time; a prepared package does not activate the service or establish directory approval.
 
 ## Choose the integration boundary
 
 | Need | Interface | Identity and authority |
 |---|---|---|
 | Analyst examines an authorized original in an assistant | Remote MCP, `https://mcp.ultiwrite.co/mcp` | User signs in through first-party OAuth and approves named scopes |
-| Backend automates document intake and report collection | REST, `https://ultiwrite.co/api/v1` | Customer creates a scoped API key in the developer console; store it on the server |
+| Backend automates document intake and report collection | REST, `https://ultiwrite.co/api/v1` | Customer creates a scoped human key or accountable API-key-backed service principal in the developer console; store the one-time credential on the server |
 | Team uses a shared balance with private member examinations | Product workspace | Active membership and member budget remain authoritative; histories stay attributed to their submitting member |
 | Operator manages a customer account or investigates a usage problem | Product admin interface | Explicit operator authorization; a customer API key never grants operator access |
 
@@ -34,6 +34,7 @@ Workspace roles and credential scopes compose; neither substitutes for the other
 | Admin | Invite/manage members within the supported team controls; cannot promote to admin or change owner/admin peers | Manage own attributed keys; admin role alone does not expose another member's keys |
 | Member | Use active workspace membership within assigned usage budget | Create/manage own attributed keys and choose scopes; cannot administer the team |
 | Platform operator | Separately provisioned product administration | Operator status is separate from workspace roles and is never conferred by a customer API key |
+| Service principal | Named standalone-product automation owned by a live workspace owner/admin | Saved scopes intersect live owner authority; this is not OAuth client credentials, an MCP host identity, or a main-platform account |
 
 REST keys have independent `forensics:read`, `forensics:analyze`, `forensics:artifacts`, `forensics:usage`, and `forensics:delete` scopes. For a reporting service, choose read/artifacts and optionally usage. Add analyze only for an intake service, and delete only when deletion is part of its intended job. MCP consent uses its separately published three scopes and does not inherit the five-scope REST key contract.
 
