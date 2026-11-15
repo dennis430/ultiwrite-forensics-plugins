@@ -396,7 +396,7 @@
     {
       "name": "ultiwrite_forensics_evidence_unlock",
       "title": "Unlock partial findings and evidence (one unit)",
-      "description": "Use only after the user explicitly authorizes spending one Ultiwrite Forensics analysis unit to unlock this partial examination's findings, evidence, metadata and available exports. The unsuccessful analysis keeps its refund. Status and check states are free. The first successful unlock consumes exactly one unit; repeats, concurrent calls and later reads consume none. It does not rerun analysis or turn partial evidence into a completed examination. Use the same requestKey for retries; reusing a key for another examination is rejected.",
+      "description": "Use only after the user explicitly authorizes spending one Ultiwrite Forensics analysis unit to unlock this partial examination's findings, evidence, metadata and available exports. confirm must be true; without it, or if it is not true, the tool returns guidance and charges nothing. The unsuccessful analysis keeps its refund. Status and check states are free. The first successful unlock consumes exactly one unit from this product's grants ledger through the same server-side path as the web and API; repeats, concurrent calls and later reads consume none. It does not rerun analysis or turn partial evidence into a completed examination. Use the same requestKey for retries; reusing a key for another examination is rejected.",
       "inputSchema": {
         "type": "object",
         "additionalProperties": false,
@@ -410,11 +410,16 @@
             "type": "string",
             "format": "uuid",
             "description": "A saved UUID for this explicit unlock; reuse it after an uncertain response."
+          },
+          "confirm": {
+            "type": "boolean",
+            "description": "Must be true. Set only after the user explicitly authorizes spending one analysis unit. If omitted or not true, the tool returns guidance and charges nothing."
           }
         },
         "required": [
           "analysisId",
-          "requestKey"
+          "requestKey",
+          "confirm"
         ]
       },
       "annotations": {

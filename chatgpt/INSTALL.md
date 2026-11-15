@@ -25,7 +25,7 @@ Meta Muse Code uses [muse-code/settings.json.example](muse-code/settings.json.ex
 
 ## Account and workflow
 
-Use `ultiwrite_forensics_account_get` and `ultiwrite_forensics_capabilities_get`, submit an authorized original with `ultiwrite_forensics_analysis_start` or its signed browser handoff, poll `ultiwrite_forensics_analysis_status`, then read findings and retrieve both PDFs (`pdf` and `metadata_analytics`), the structured export (`result`) and artifact manifest (`manifest`). Examinations spend standalone analysis units. Polling and downloads are free. Flagship Ultiwrite subscriptions and OAuth tokens do not confer access.
+Use `ultiwrite_forensics_account_get` and `ultiwrite_forensics_capabilities_get`, submit an authorized original with `ultiwrite_forensics_analysis_start` or its signed browser handoff, poll `ultiwrite_forensics_analysis_status`, then read findings and retrieve both PDFs (`pdf` and `metadata_analytics`), the structured export (`result`) and artifact manifest (`manifest`). A locked partial examination's findings, evidence and exports require `ultiwrite_forensics_evidence_unlock` with `confirm: true` after the user explicitly authorizes the one-unit charge; without `confirm: true` the tool returns guidance and charges nothing. Examinations spend standalone analysis units. Polling and downloads are free. Flagship Ultiwrite subscriptions and OAuth tokens do not confer access.
 
 The live tool descriptions and [MCP setup guide](https://ultiwrite.co/docs/mcp) are authoritative for limits and availability. Findings do not certify authenticity. See [privacy](https://ultiwrite.co/privacy) and [retention](https://ultiwrite.co/data-retention) before submitting files.
 
