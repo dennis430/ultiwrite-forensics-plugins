@@ -1,8 +1,8 @@
 {
   "product": "ultiwrite-forensics",
-  "version": "1.0.11",
-  "manifestSha256": "060db3e1bc8060c9fc875734bef29f1b1c6ee6354395026b8c2513d85ee0ea8b",
-  "validatedAt": "2026-11-13T18:17:25.505Z",
+  "version": "1.0.13",
+  "manifestSha256": "2cf3a3ce6e484a20a2b00fbf5c6ade76bd6c798ba1e2918411c9ecdbd7584ff1",
+  "validatedAt": "2026-11-15T02:57:05.478Z",
   "results": {
     "openai": {
       "checks": {
@@ -20,6 +20,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -36,6 +37,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "portal excludes app references and hooks": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
@@ -54,6 +56,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -71,6 +74,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -80,14 +84,14 @@
     },
     "claude": {
       "checks": {
-        "claude plugin validate plugin": "pass",
-        "claude plugin validate marketplace": "pass",
+        "archive available for native validator": "pass",
         "archive hash, size and version": "pass",
         "canonical identity in actual ZIP": "pass",
         "canonical listing in actual ZIP": "pass",
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -106,6 +110,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -124,6 +129,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -141,6 +147,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -157,6 +164,7 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -176,8 +184,58 @@
         "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
         "Meta read-only scope and factual proposed tool classifications": "pass",
         "host identity and OAuth isolation in actual ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "sdk-typescript": {
+      "checks": {
+        "local-only package identity and allowlist": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
+        "Meta read-only scope and factual proposed tool classifications": "pass",
+        "no generated Python or tool cache material": "pass",
+        "native archive root and safe paths": "pass",
+        "no document, environment, SQL, key or private source material": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "cli": {
+      "checks": {
+        "local-only package identity and allowlist": "pass",
+        "bundled SDK matches canonical TypeScript transport": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
+        "Meta read-only scope and factual proposed tool classifications": "pass",
+        "no generated Python or tool cache material": "pass",
+        "native archive root and safe paths": "pass",
+        "no document, environment, SQL, key or private source material": "pass",
+        "no credentials, engine internals or main-platform endpoint": "pass",
+        "standalone endpoint present": "pass"
+      },
+      "ok": true
+    },
+    "sdk-python": {
+      "checks": {
+        "local-only typed package identity": "pass",
+        "archive hash, size and version": "pass",
+        "canonical identity in actual ZIP": "pass",
+        "canonical listing in actual ZIP": "pass",
+        "Muse Code native settings preserve schema and product OAuth endpoint": "pass",
+        "Meta read-only scope and factual proposed tool classifications": "pass",
+        "no generated Python or tool cache material": "pass",
+        "native archive root and safe paths": "pass",
+        "no document, environment, SQL, key or private source material": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
         "standalone endpoint present": "pass"
       },
@@ -197,6 +255,10 @@
         "embedded antigravity matches validated host ZIP": "pass",
         "embedded gemini-cli matches validated host ZIP": "pass",
         "embedded microsoft-365 matches validated host ZIP": "pass",
+        "embedded sdk-typescript matches validated host ZIP": "pass",
+        "embedded sdk-python matches validated host ZIP": "pass",
+        "embedded cli matches validated host ZIP": "pass",
+        "no generated Python or tool cache material": "pass",
         "native archive root and safe paths": "pass",
         "no .pdf/.env/source in archive": "pass",
         "no credentials, engine internals or main-platform endpoint": "pass",
@@ -208,6 +270,9 @@
   "externalDependencies": {
     "grok-build": [
       "Native Grok Build verification, Dennis's brand ownership proof for the personal-account repository, full-catalog CI and explicit upstream submission authorization remain required. Contribution currently pins the existing public package, not the new unpublished package."
+    ],
+    "claude": [
+      "Run `claude plugin validate` against both the plugin and marketplace directories in an environment with the current Claude CLI. This build environment has no `claude` executable; structural archive checks passed but are not native-host proof."
     ],
     "microsoft-365": [
       "Register the DCR configuration in the Teams Developer Portal and replace its referenceId before submission."

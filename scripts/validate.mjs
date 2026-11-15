@@ -9,6 +9,8 @@ export async function files(root, dir = root) {
   const paths = [];
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    assert.ok(!['__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache'].includes(entry.name)
+      && !/\.(?:pyc|pyo)$/i.test(entry.name), `Generated cache material not allowed: ${entry.name}`);
     const path = join(dir, entry.name);
     assert.ok(!(await lstat(path)).isSymbolicLink(), `Symlink not allowed: ${path}`);
     if (entry.isDirectory()) paths.push(...await files(root, path));
